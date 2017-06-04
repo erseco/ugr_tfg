@@ -207,8 +207,27 @@ Con los datos recogidos y basándonos en el excelente articulo\cite{art_02} de J
 
 \section{Análisis de usabilidad de la plataforma}
 
-Una vez obtenida la información
-Para esta tarea primeramente se tuvieron en cuenta toda la información extraída de las entrevistas personales y se procedió a ver si realmente era usable.
+
+Para el análisis de usabilidad hicimos uso de las directrices del experto en usabilidad Jakob Nielsen \cite{jakonielsen} conocidas como 'Heurísticas de Nielsen' para crear sistemas que sean amigables para el usuario:
+
+\begin{enumerate}
+\item \textbf{Visibilidad del estado del sistema.} El sistema debe informar a los usuarios del estado del sistema, dando una retroalimentación apropiada en un tiempo razonable.
+\item \textbf{Utilizar el lenguaje de los usuarios.} El sistema debe utilizar el lenguaje de los usuarios, con palabras o frases que le sean conocidas, en lugar de los términos que se utilizan en el sistema, para que al usuario no se le dificulte utilizar el sistema.
+\item \textbf{Control y libertad para el usuario.} En casos en los que los usuarios elijan una opción del sistema por error, éste debe contar con las opciones de deshacer y rehacer para proveer al usuario de una salida fácil sin tener que utilizar diálogo extendido.
+\item \textbf{Consistencia y estándares.} El usuario debe seguir las normas y convenciones de la plataforma sobre la que está implementando el sistema, para que no se tenga que preguntar el significado de las palabras, situaciones o acciones del sistema.
+\item \textbf{Prevención de errores.} Es más importante prevenir la aparición de errores que generar buenos mensajes de error. Hay que eliminar acciones predispuestas al error o, en todo caso, localizarlas y preguntar al usuario si está seguro de realizarlas.
+\item \textbf{Minimizar la carga de la memoria del usuario.} El sistema debe minimizar la información que el usuario debe recordar mostrándola a través de objetos, acciones u opciones. El usuario no tiene por qué recordar la información que recibió anteriormente. Las instrucciones para el uso del sistema deberían ser visibles o estar al alcance del usuario cuando se requieran.
+\item \textbf{Flexibilidad y eficiencia de uso.} Los aceleradores permiten aumentar la velocidad de interacción para el usuario experto tal que el sistema pueda atraer a usuarios principiantes y experimentados. Es importante que el sistema permita personalizar acciones frecuentes para así acelerar el uso de éste.
+\item \textbf{Diálogos estéticos y diseño minimalista.} La interfaz no debe contener información que no sea relevante o se utilice raramente, pues cada unidad adicional de información en un diálogo compite con las unidades relevantes de la información y disminuye su visibilidad relativa.
+\item \textbf{Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de los errores.} Los mensajes de error deben expresarse en un lenguaje claro, indicar exactamente el problema y ser constructivos.
+\item \textbf{Ayuda y documentación.} A pesar de que es mejor un sistema que no necesite documentación, puede ser necesario disponer de ésta. Si así es, la documentación tiene que ser fácil de encontrar, estar centrada en las tareas del usuario, tener información de las etapas a realizar y no ser muy extensa.
+\end{enumerate}
+	
+
+Además se tuvo en consideración las recomendaciones de usabilidad de María Elena Alva\cite{melenaalva} y Eric Reiss\cite{ericreiss}, así como mi experiencia de varios años trabajando como desarrollador web.
+
+\bigskip
+Siguiendo todas estas recomendaciones se comprobó cada uno los problemas indicados en las entrevistas personales, intentando reproducirlos. También se comprobaron otros detalles de usabilidad no mencionados en las entrevistas.
 
 \section{Análisis de accesibilidad de la plataforma}
 
@@ -216,10 +235,22 @@ Se analizó mediante diversas herramientas si la plataforma era accesible, esta 
 
 \section{Análisis de seguridad}
 
-Para analizar la seguridad de la plataforma se realizó una auditoría para ver que información sensible se podía extraer de la misma. Para la misma se analizaron las vulnerabilidades específicas de la versión instalada mirando en distintos repositorios de exploits así como en el propio listado de vulnerabilidades de moodle que se puede encontrar en \url{https://moodle.org/security/}
+Para analizar la seguridad de la plataforma se realizó una auditoría para ver que información sensible se podía extraer de la misma. Para la misma se analizaron las vulnerabilidades específicas de la versión instalada mirando en distintos repositorios de exploits así como en el propio listado de vulnerabilidades (CVE) de moodle que se puede encontrar en \url{https://moodle.org/security/}.
 
 \bigskip
-Asimismo se diseñó un ataque dirigido de secuestro de sesión \textit{(session hijacking)} y se intentaron robar las variables de sesión de moodle del tutor bajo su consentimiento expreso.
+Prado no tiene activado por defecto el protocolo https aunque si tengan un certificado SSL instalado, por lo que la página podía ser vulnerable a secuestros de sesión \textit{(session hijacking)}. Para comprobar si esto era posible y haciendo uso de la herramienta \textbf{ettercap} lanzamos un ataque de ARP Spoofing\cite{art_08} que hiciera que todas las peticiones http que pasaran por la red pasaran por nuestra máquina que estaría capturando los datos, los ataques de este tipo son bien conocidos desde 1997\cite{art_07} por lo que los propios desarrolladores de moodle recomiendan habilitar por defecto el protocolo https\cite{art_10}.
+
+\bigskip
+Para ejecutar dicho ataque solo tuvimos que llamar a ettercap con una serie de parámetros:
+
+\begin{lstlisting}
+sudo ettercap -T -i en0 -P autoadd -M arp ///80 -e "^GET /moodle/ HTTP/1.[01].*MOODLEID1_=" -t tcp
+\end{lstlisting}
+
+Para optimizar el ataque incluimos como parámetro una expresión regular que se centra en obtener la variable de sesión de moodle para así reducir el tamaño de las capturas, si la plataforma es vulnerable podremos ver la variable de sesión \textbf{MOODLEID1\_} en cuanto un usuario se identifique en la página.
+
+\bigskip
+Como no queríamos causar ningún tipo de problema al resto de usuarios decidimos lanzar un ataque dirigido en el que se intentó robar las variables de sesión de moodle del tutor bajo su consentimiento expreso.
 
 \section{Análisis de disponibilidad}
 
