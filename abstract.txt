@@ -1,0 +1,25 @@
+Este proyecto tiene como objetivo la elaboración de un informe profesional sobre la Plataforma de Recursos de Apoyo a la docencia en uso actualmente por la Universidad de Granada analizando su Accesibilidad, Usabilidad, Seguridad y Disponibilidad.
+
+Para dicho análisis se realizaron encuestas a usuarios de la plataforma, se analizaron las estadísticas de uso en colaboración con los administradores de la misma y se analizó el código de la plataforma moodle, se revisaron las recomendaciones de buenas practicas de sus desarrolladores y se estudiaron algunas de las vulnerabilidades documentadas en su CVE \footnote{Common Vulnerabilities and Exposures, siglas CVE, es una lista de información registrada sobre conocidas vulnerabilidades de seguridad, donde cada referencia tiene un número de identificación único.}.
+
+El informe final tendrá como objetivo dar a conocer tanto las fortalezas como las debilidades de la plataforma Prado2 con objeto de servir de ayuda a sus administradores para mejorar la misma y ayudándoles a su vez a conocer la opinión de sus usuarios.
+
+Como ya sabemos Internet ha tenido un carácter académico desde prácticamente su nacimiento y por ello las mayores innovaciones y casi todo su enfoque ha salido de estos ámbitos previos a la democratización de la red y el acceso global a Internet. Es impensable concebir hoy día la enseñanza sin hacer uso de Internet y puede que en un futuro no muy lejano la totalidad de la enseñanza se imparta a través de la red.
+
+Pero un uso tan generalizado es inconcebible sin una interfaz adecuada que sea amigable, sencilla e incluso atrayente y es por eso que muchas empresas gastan millones de dólares en mejorar las interfaces. 'La usabilidad ha venido para quedarse'.
+
+Tras la implantación definitiva de la plataforma Prado2 por parte de la Delegación de la Rectora para la Universidad Digital se han venido sucediendo críticas por parte tanto de alumnos como profesores a las carencias de la plataforma, esto, junto a los insuficientes recursos con los que cuenta el CEVUG para dar un servicio adecuado ha hecho que una plataforma potente y consolidada como es moodle genere rechazo ya que como bien apuntaba Steve Krug: 'Si un sistema no es usable nadie lo querrá usar'.
+
+En cuanto al análisis previo de la plataforma, vimos que efectivamente encontrábamos diversos errores de simple solución que mejorarían enormemente la facilidad de uso.
+
+Los resultados de la encuesta fueron los esperados y vimos que la inmensa mayoría de usuarios solo necesitan una plataforma donde subir y descargar documentos y crear tareas. También vimos que una gran cantidad de usuarios encontraría muy útil un mejor acceso desde plataformas móviles ya sea utilizando un diseño adaptado a navegadores móviles o utilizando un aplicación nativa para smartphones.
+
+El análisis sobre los registros de la plataforma respaldan los resultados de la encuesta. No se llega a usar apenas un mínimo porcentaje de las características de la plataforma y se podría aprovechar esto para desactivar algunas opciones que hagan mas simple el uso de Prado.
+
+En cuanto a seguridad demostramos que es bastante deficiente y que debería mejorarse de inmediato ya que un usuario malintencionado podría robar información y documentos tanto de profesores como de alumnos y hacer un uso ilícito de los mismos.
+
+Quiero hacer hincapié en el gran esfuerzo realizado por los profesionales del CEVUG y no quiero que este análisis se entienda como una crítica hacia su excelente trabajo. Con mi experiencia como desarrollador web puedo afirmar que no es fácil tener en cuenta los miles de detalles requeridos para personalizar, adaptar y optimizar una plataforma y mas cuando se trabaja a contrarreloj solucionando problemas lo que en muchos casos no permite mas que hacer un ajuste "temporal" que perdura en el tiempo indefinidamente. Por ello este informe, aunque dirigido a ellos como ayuda para optimizar la plataforma quizá debería servirles para hacer ver a sus superiores que algo tan importante como la plataforma web de apoyo a la docencia debería tener mas medios.
+
+Sólo como nota, para gestionar su cuenta de twitter la policía nacional de España cuenta con un equipo de 8 personas a tiempo completo. Prado, que evidentemente es mas complejo y requiere muchísimo más trabajo solo cuenta con un desarrollador a tiempo completo y dos personas auxiliares a tiempo parcial.
+
+

@@ -1,0 +1,251 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[export]{adjustbox}
+\usepackage{fancybox}
+
+
+
+\usepackage{wrapfig}
+
+
+\usepackage{float}
+
+\usepackage{booktabs}
+
+
+%\usepackage{minted}
+
+\usepackage{rotating}
+
+\usepackage{blindtext}
+
+
+% Información reutilizable
+\newcommand{\asunto}{Trabajo de Fin de Grado}
+\newcommand{\titulo}{Análisis de plataforma de recursos de apoyo a la docencia}
+\newcommand{\tituloEng}{Analysis of teaching support resources platform}
+\newcommand{\grado}{Grado en Ingeniería Informática}
+\newcommand{\autor}{Ernesto Serrano Collado}
+\newcommand{\email}{info@ernesto.es}
+\newcommand{\tutor}{Sergio Alonso Burgos}
+\newcommand{\escuela}{Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación}
+\newcommand{\universidad}{Universidad de Granada}
+\newcommand{\ciudad}{Granada}
+\newcommand{\vers}{Versión 0.1}
+\providecommand{\keywords}{software libre, docencia, moodle, análisis, accesibilidad, usabilidad, seguridad, disponibilidad}
+
+\providecommand{\keywordsen}{free software, teaching, moodle, analysis, accessibility usability, security, availability}
+
+
+% Información archivo
+\hypersetup{
+	pdfauthor = {\autor\ (\email)},
+	pdftitle = {\titulo},
+	pdfsubject = {\asunto},
+	pdfkeywords = {\keywords},
+	pdfcreator = {MacTeX con el paquete TeX Live},
+	pdfproducer = {pdflatex}
+}
+
+% Estilo de cabeceras
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+\setlength{\headheight}{1.5\headheight}
+
+% Redefinición de comandos
+\renewcommand{\lstlistingname}{Fragmento de código}
+\renewcommand{\lstlistlistingname}{Índice de fragmentos de código}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+
+% Definición de colores
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{gray30}{gray}{.94}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{punct}{red!60!black}
+\colorlet{numb}{magenta!60!black}
+
+% Listados
+\lstset{
+	aboveskip=0.5cm,
+	backgroundcolor=\color{gray97},
+	basicstyle=\scriptsize\ttfamily,
+	breaklines=true,
+	commentstyle=\color{gray45},
+	frame=Ltb,
+	framerule=0.5pt,
+	framesep=0pt,
+	framexbottommargin=3pt,
+	framexleftmargin=0.1cm,
+	framextopmargin=3pt,
+	keywordstyle=\bfseries,
+	numberfirstline = false,
+	numbers=left,
+	numbersep=6pt,
+	numberstyle=\tiny,
+	rulesep=.4pt,
+	rulesepcolor=\color{black},
+	showstringspaces = false,
+	stringstyle=\ttfamily,
+	literate={á}{{\'a}}1
+	         {é}{{\'e}}1
+	         {í}{{\'i}}1
+	         {ó}{{\'o}}1
+	         {ú}{{\'u}}1
+	         {ñ}{{\~n}}1
+}
+
+% Minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+	{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+% Listado definido para JavaScript
+% http://tex.stackexchange.com/questions/89574/language-option-supported-in-listings/89576#89576
+\lstdefinelanguage{javascript}{
+	backgroundcolor=\color{background},
+	basicstyle=\footnotesize,
+	breaklines=true,
+	captionpos=b,
+	comment=[l]{//},
+	commentstyle=\color{purple}\ttfamily,
+	frame=lines,
+	identifierstyle=\color{black},
+	keywordstyle=\color{blue}\bfseries,
+	morecomment=[s]{/*}{*/},
+	morestring=[b]',
+	morestring=[b]",
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	numbers=left,
+	numbersep=8pt,
+	numberstyle=\scriptsize,
+	sensitive=false,
+	showstringspaces=false,
+	stepnumber=1,
+	stringstyle=\color{red}\ttfamily,
+	keywords={
+		break,
+		case,
+		catch,
+		catch,
+		do,
+		else,
+		false,
+		function,
+		if,
+		in,
+		new,
+		null,
+		return,
+		switch,
+		true,
+		typeof,
+		var,
+		while},
+	ndkeywords={
+		boolean,
+		class,
+		export,
+		implements,
+		import,
+		this,
+		throw}
+}
+
+% Listado definido para JSON
+% http://tex.stackexchange.com/questions/83085/how-to-improve-listings-display-of-json-files/83100#83100
+\lstdefinelanguage{json}{
+	backgroundcolor=\color{background},
+	basicstyle=\footnotesize,
+	breaklines=true,
+	captionpos=b,
+	frame=lines,
+	numbers=left,
+	numbersep=8pt,
+	numberstyle=\scriptsize,
+	showstringspaces=false,
+	stepnumber=1,
+	literate=
+		*{:}{{{\color{punct}{:}}}}{1}
+		{,}{{{\color{punct}{,}}}}{1}
+	    {\{}{{{\color{delim}{\{}}}}{1}
+	    {\}}{{{\color{delim}{\}}}}}{1}
+	    {[}{{{\color{delim}{[}}}}{1}
+	    {]}{{{\color{delim}{]}}}}{1}
+	    {ñ}{{\~{n}}}{1}
+}
+
+% Para que las páginas en blanco no tengan cabecera
+\makeatletter
+\def\clearpage{%
+  \ifvmode
+    \ifnum \@dbltopnum =\m@ne
+      \ifdim \pagetotal <\topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+\begin{document}
+\input{front/front}
+\frontmatter
+\input{prefaces/prefaces}
+
+\begingroup
+\let\cleardoublepage\clearpage
+  \tableofcontents
+%  \listoffigures
+%  \listoftables
+%  \lstlistoflistings
+\endgroup
+
+\newpage
+\thispagestyle{empty}
+\
+\mainmatter
+\input{chapters/01_Introduccion}
+\input{chapters/02_Objetivos}
+\input{chapters/03_Metodologia}
+\input{chapters/04_Resultados}
+\input{chapters/05_Conclusiones}
+\input{chapters/06_Anexos}
+
+\backmatter
+\begingroup
+	\setlength\parindent{0pt}
+	\input{back/glossary}
+\endgroup
+
+
+\newpage
+\begin{thebibliography}{99}
+	\input{back/bibliography}
+\end{thebibliography}
+
+\newpage \
+\thispagestyle{empty}
+\end{document}

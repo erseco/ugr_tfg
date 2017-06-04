@@ -1,0 +1,21 @@
+# Archivos generados por pdflatex
+*.aux
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.pyg
+*.toc
+*.synctex.gz
+
+# Archivos de copia de seguridad
+*.backup
+*.bak
+*~
+
+# Archivo PDF
+*.pdf
+
+# R
+.Rhistory
