@@ -231,7 +231,10 @@ Siguiendo todas estas recomendaciones se comprobó cada uno los problemas indica
 
 \section{Análisis de accesibilidad de la plataforma}
 
-Se analizó mediante diversas herramientas si la plataforma era accesible, esta tarea la ampliamos para que incluyera tanto la accesibilidad para personas como discapacidad como la accesibilidad desde dispositivos móviles y el uso en otros idiomas.
+La accesibilidad para personas con alguna discapacidad se analizó usando mediante diversas herramientas online que validan si una plataforma cumple las normativas de accesibilidad. 
+
+\bigskip
+Este apartado lo ampliamos para que incluyera además la accesibilidad desde dispositivos móviles y el soporte multi-idioma de Prado.
 
 \section{Análisis de seguridad}
 
@@ -247,7 +250,7 @@ Para ejecutar dicho ataque solo tuvimos que llamar a ettercap con una serie de p
 sudo ettercap -T -i en0 -P autoadd -M arp ///80 -e "^GET /moodle/ HTTP/1.[01].*MOODLEID1_=" -t tcp
 \end{lstlisting}
 
-Para optimizar el ataque incluimos como parámetro una expresión regular que se centra en obtener la variable de sesión de moodle para así reducir el tamaño de las capturas, si la plataforma es vulnerable podremos ver la variable de sesión \textbf{MOODLEID1\_} en cuanto un usuario se identifique en la página.
+Para optimizar el ataque incluimos como parámetro una expresión regular que se centra en obtener la variable de sesión de moodle para así reducir el tamaño de las capturas, si la plataforma es vulnerable podremos ver las variables de sesión \textbf{MOODLEID1\_}, \textbf{SimpleSAMLSessionID-sp} y \textbf{SimpleSAMLAuthToken} en cuanto un usuario se identifique en la página.
 
 \bigskip
 Como no queríamos causar ningún tipo de problema al resto de usuarios decidimos lanzar un ataque dirigido en el que se intentó robar las variables de sesión de moodle del tutor bajo su consentimiento expreso.
