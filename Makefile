@@ -11,7 +11,7 @@
 ###############################################################################
 
 # TODO (sin empaquetado)
-all: doc clean
+all: doc #clean
 
 
 #Generación de PDF compilando el archivo LaTeX con pdflatex
