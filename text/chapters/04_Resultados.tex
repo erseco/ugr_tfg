@@ -2,14 +2,18 @@
 
 \section{Análisis general de la plataforma}
 
-La versión actualmente instalada de moodle es la 2.6.4 cuando la última versión estable a 15 de mayo de 2017 es la 3.3, la rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}
+La plataforma Prado usa la 2.6.4 de moodle aunque la última versión estable a 15 de mayo de 2017 es la 3.3. La rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}.
 
+\bigskip
 Prado2 usa como plantilla el tema Archaius \cite{moodletheme}, desarrollada por el programador colombiano Daniel Múnera Sánchez. Podemos ver la versión de la plantilla accediendo a \url{http://prado.ugr.es/moodle/theme/archaius/README.md} viendo que la versión instalada es del 11 de agosto de 2014, cuando dicho tema, a pesar de haber sido abandonado por su autor tiene versiones mas actualizadas que solucionan diversos problemas.
 
+\bigskip
 Al acceder a la url \url{http://prado.ugr.es/} nuestro navegador descargará un archivo index.html (ver figura \ref{redireccionhttp}) que le dirá al navegador que tiene que hacer una nueva petición para descargar la web desde el subdirectorio /moodle/, las redirecciones http están desaconsejadas y hay otras formas de resolver este problema utilizando una única petición htt, por experiencia propia esto deja entrever que se partió de una instalación rápida desempaquetando el fichero comprimido de moodle y empezando a trabajar desde ahí. Se podría entender que se ha dejado para dejar la referencia a que se está usando el paquete moodle pero se han eliminado todas las referencias a la misma, incluso los enlaces a su licencia cosa a la que obliga la GPLv3 que es la licencia de moodle.
 
+\bigskip
 Curiosamente Ágora \url{http://pefc5.ugr.es} que es la instalación de moodle que utilizan en la facultad de psicología resuelve esto con una redirección 302
 
+\bigskip
 En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaban Oracle por requerimiento del CSIRC, pues no daban soporte a ningún otro motor de base de datos y que habían que tenido que realizar diversas adaptaciones al código de moodle para que funcionara sobre este motor. Tras la recepción de los datos por parte del CEVUG analizando la consulta que lanzaron para obtener los datos pudimos certificar que efectivamente estaban usando Oracle pues la consulta hacía uso de funciones propias de Oracle pero que moodle soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.  
 
 
@@ -20,20 +24,26 @@ En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaba
 \label{redireccionhttp}
 \end{figure}
 
+\bigskip
 Las versiones antiguas de moodle utilizaban la librería YUI desarrollada por Yahoo cuyo desarrollo se abandonó el 29 de agosto de 2014 \cite{art_01} y a partir de la 2.9 se comenzó a migrar a la librería jQuery. Aunque moodle 2.6 utiliza YUI la plantilla Archaius usa varias funciones de la librería jQuery 1.10.2 \url{https://prado.ugr.es/moodle/theme/jquery.php/core/jquery-1.10.2.min.js} que fue liberada el 3 de Julio de 2013 y que teniendo en cuenta que la librería está ya por su versión 3.2 vemos que está claramente obsoleta.
 
+\bigskip
 Se está utilizando Apache como servidor HTTP, notar que se oculta su versión haciéndolo mas seguro ante posibles ataques dirigidos, esto es un acierto.
 
+\bigskip
 El servidor tiene instalada la versión 5.4.45 que fue liberada el 3 de septiembre de 2015 y que como podemos ver en \url{http://php.net/supported-versions.php} ya no está soportada. En este caso hay dos problemas, por un lado el usar una versión tan anticuada de PHP y por otra no ocultar la versión, siendo muy fácil encontrar vulnerabilidades para dicha versión.
 
 \section{Entrevistas personales}
 
 Como ya hemos comentado se hicieron una serie de entrevistas informales en las que simplemente se anotaban los puntos de vista de los usuarios así como sus quejas y sugerencias y se culminaba con un pequeño test de usabilidad consistente en pedir a los usuarios que cambiaran su foto de perfil de Prado2. En el test participaron cerca de 30 personas, tanto profesores y usuarios de Prado2 como gente externa que nunca había visto la plataforma.
 
+\bigskip
 Para cambiar la imagen de perfil de prado dos la ruta correcta a seguir es: Administración - > Editar Perfil - > Imagen del Usuario y aunque puede parecer sencillo nadie bajó del minuto y medio mientras probaba erráticamente en varios sitios, hubo un estudiante del Grado en Ingeniería Informática que tardó más de 4 minutos.
 
+\bigskip
 Todos los usuarios repetían básicamente el mismo patrón, como se les pedía que cambiaran la imagen del perfil lo primero que hacían era hacer click en la imagen para ver si salía alguna opción de editar, lo que deja entrever lo lejos que está la plantilla actual del uso real que hacen los usuarios. 
 
+\bigskip
 Además los distintos usuarios nos hicieron notar los siguientes problemas y/o carencias con los que se habían encontrado:
 
 \begin{enumerate}
@@ -201,11 +211,6 @@ Igual pasa con algunas tareas específicas creadas para la UGR como pueden ser l
 \includegraphics[width=0.8\textwidth]{../charts/05_actividades_06} 
 
 \end{figure}
-
-
-
-
-
 
   \item \textbf{¿Cómo calificaría Prado2?}
   
@@ -376,33 +381,48 @@ El tener varias vistas de las mismas secciones da lugar a confusión, por ejempl
 
 \section{Análisis de accesibilidad de la plataforma}
 
-En cuanto al análisis de accesibilidad, 
+Los resultados de los análisis automáticos de accesibilidad de la página principal de Prado (ver figuras \ref{fig:tawdis}, \ref{fig:tenon} y \ref{fig:htmlcodesniffer}) indican que la plataforma tiene algunos puntos que corregir para cumplir con el estándar AA de accesibilidad. No se ha podido analizar de forma automática las páginas internas pues dichas herramientas no pueden acceder a la Plataforma porque hay que autentificarse. El resultado de dicho análisis automático es positivo pues la gran mayoría son pequeños detalles como asignación de etiquetas \texttt{alt}\footnote{Las etiquetas 'alt' se usan en las imágenes como “alternate text”, es decir, un texto que describe la imagen.} en imágenes. 
 
-
-
-Aplicacion movil
+\bigskip
+El test TAW nos indica que los colores de la plataforma pueden llegar a generar confusión y que sería adecuado un esquema de colores que permita distinguir de forma mas fácil la información importante así como las secciones principales.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{../screenshots/tawdis}
-\caption{Resultados del ataque mediante ettercap}
-\label{ettercap}
+\caption{Resultados de usabilidad con TAW}
+\label{fig:tawdis}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.0\textwidth]{../screenshots/tenon}
-\caption{Resultados del ataque mediante ettercap}
-\label{ettercap}
+\includegraphics[width=0.9\textwidth]{../screenshots/tenon}
+\caption{esultados de usabilidad con tenion.io}
+\label{fig:tenon}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.0\textwidth]{../screenshots/htmlcodesniffer}
-\caption{Resultados del ataque mediante ettercap}
-\label{ettercap}
+\includegraphics[width=0.7\textwidth]{../screenshots/htmlcodesniffer}
+\caption{esultados de usabilidad con HTML CodeSniffer}
+\label{fig:htmlcodesniffer}
 \end{figure}
 
+
+\bigskip
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{../screenshots/capturamovil2}
+\caption{Captura desde un teléfono móvil}
+\label{fig:capturamovil2}
+\end{figure}
+
+\bigskip
+La plataforma moodle está disponible en más de 100 idiomas pero en Prado se ha optado por habilitar castellano e inglés. El problema es que gran parte del contenido añadido a la plantilla, la ayuda y la información de los cursos se ha introducido de forma forzada en castellano con lo que el uso en inglés de la plataforma es prácticamente imposible. Varios alumnos de intercambio nos han hecho llegar sus quejas a la hora de manejarse en la plataforma, ya que no entienden que seleccionando la opción de idioma inglés la mayor parte de la interfaz y el contenido aparezca en castellano, creándoles confusión ya que muchos desconocen el castellano.
+
+\bigskip
+Si un usuario selecciona el idioma inglés, al ir a la página del IDP del CSIRC para iniciar sesión no se respetará la selección del usuario sino que se obtendrá el idioma del navegador. Esto tendría una solución bastante sencilla pues bastaría pasarle a la url el parámetro \texttt{\&language=<codigo\_iso>} en la llamada al proveedor de identidad.
 
 
 \section{Análisis de seguridad}
@@ -415,18 +435,20 @@ Miramos el código fuente de la página y vemos que se están enlazando de maner
 \bigskip
 Una vez lanzado el programa ettercap le pedimos al tutor que se conectara a Prado y a los pocos segundos obtuvimos el resultado que se puede ver en la figura \ref{fig:ettercap}, en unos pocos segundos y aun estando dentro de una red wifi con cifrado WPA2 pudimos realizar el ataque de ARP Spoofing sin ningún problema. Finalmente obtuvimos las variables de sesión \textbf{MOODLEID1\_}, \textbf{SimpleSAMLSessionID-sp} y \textbf{SimpleSAMLAuthToken}, las cuales copiamos en nuestro navegador con un editor de cookies y de inmediato podíamos navegar suplantando la identidad del tutor.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.0\textwidth]{../screenshots/ettercap}
-\caption{Resultados del ataque mediante ettercap}
-\label{ettercap}
-\end{figure}
-
 \bigskip 
 Hay que tener en cuenta que para iniciar sesión se utiliza el IDP del CSIRC, que si funciona a través de https por lo que en ningún momento podríamos capturar la contraseña del usuario como si se podría hacer si la página de login funcionara a través de http.
 
 \bigskip
 También es un pequeño problema de seguridad el permitir acceder a ficheros README, CHANGELOG y demás, pues esto permite a un posible atacante conocer la versión que se está ejecutando y realizar un ataque utilizando vulnerabilidades conocidas. Si la plataforma se mantuviera constantemente actualizada esto no sería un problema, pero si se va congelar en una versión antigua y sin soporte lo mejor es 'fortificar' la instalación para evitar males mayores.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{../screenshots/ettercap}
+\caption{Resultados del ataque mediante ettercap}
+\label{fig:ettercap}
+\end{figure}
+
+
 
 \section{Análisis de disponibilidad}
 
