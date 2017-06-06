@@ -513,3 +513,96 @@ $( document ).ready(function() {
      $('.block').css('display', 'block');
 });
 \end{lstlisting}
+
+\newpage
+\section{Scripts en R}
+\begin{lstlisting}
+library(ggplot2)
+require(scales)
+library(dplyr)
+library(tidyr)
+library(magrittr)
+library(RColorBrewer)
+library(ggthemes)
+library(zoo)
+
+setwd("/Users/ernesto/Downloads/data_prado")
+
+#mdl_log <- read.csv('log_mod.csv')
+mdl_log <- read.csv('log2015.csv')
+
+
+#campos "ID","TIME","USERID_MD5","IP_MD5","COURSE","COURSE_CODE","TIT","PLAN","CEA","MODULE","CMID","ACTION","URL","INFO"
+
+### Setup additional date variables
+mdl_log$time <- as.POSIXlt(mdl_log$TIME, tz = "Europe/Madrid", origin="1970-01-01")
+mdl_log$day <- mdl_log$time$mday
+mdl_log$month <- mdl_log$time$mon+1 # month of year (zero-indexed)
+mdl_log$year <- mdl_log$time$year+1900 # years since 1900
+mdl_log$hour <- mdl_log$time$hour
+mdl_log$date <- as.Date(mdl_log$time)
+mdl_log$week <- format(mdl_log$date, '%Y-%U')
+mdl_log$dts <- as.POSIXct(mdl_log$date)
+mdl_log$time <- as.POSIXct(mdl_log$time) #la convertimos a POSIXct
+
+mdl_log$dts_str <- interaction(mdl_log$day,mdl_log$month,mdl_log$year,mdl_log$hour,sep='_')
+mdl_log$dts_hour <- strptime(mdl_log$dts_str, "%d_%m_%Y_%H")
+mdl_log$dts_hour <- as.POSIXct(mdl_log$dts_hour)
+
+#mdl_2015 <- subset(mdl_log, year == 2015)
+
+d <- tbl_df(mdl_log)
+#d %>% mutate(time = as.POSIXct(time))
+#d %>% mutate(TIME = as.POSIXct(time))
+
+daily <- group_by(d, USERID_MD5, dts) %>% summarise(Total = n())
+daily$dow = as.factor(format(daily$dts, format="%a"))
+
+ggplot(daily, aes(dow, Total)) +
+geom_boxplot(aes(fill=dow)) +
+scale_x_discrete(limits=c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')) +
+theme_few() +
+xlab('Dia de la semana') + ylab('Frecuencia de actividad del usuario') +
+guides(fill=FALSE)
+
+hourly <- group_by(d, dts_hour) %>% summarise(Total = n())
+hourly$dow = as.factor(format(hourly$dts, format="%a"))
+hourly$hr = format(hourly$dts_hour, format="%H")
+hourly$semana = 'Dia lectivo'
+hourly[hourly$dow=='Sat'|hourly$dow=='Sun',]$semana = 'Fin de semana'
+
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
+"#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+ggplot(hourly, aes(hr,Total)) +
+geom_boxplot(aes(fill=semana)) +
+geom_smooth(aes(group=semana)) +
+scale_fill_manual(values=cbPalette) +
+xlab('Hora del día') + ylab('Frecuencia de actividad diaria')
+
+udaily <- group_by(d, dts) %>% summarise(users = n_distinct(USERID_MD5))
+
+ggplot(udaily, aes(dts, users)) +
+geom_bar(stat="identity", fill="#60B3CE") +
+scale_x_datetime(breaks = date_breaks("1 week"),
+minor_breaks = date_breaks("1 day"),
+labels = date_format("%d-%b-%y")) +
+scale_color_manual(values=cbPalette) +
+theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+labs(x="Día", y="Distinto número de usuarios")
+
+utotal <- group_by(d, USERID_MD5) %>% summarise(Total = n())
+
+ggplot(utotal, aes(reorder(USERID_MD5, Total), Total)) +
+geom_point(alpha=0.5, color = "#FF8300") +
+scale_x_discrete(breaks=NULL) +
+xlab('Usuario') + ylab('Actividad total')
+
+ggplot(utotal, aes(Total)) +
+geom_histogram(binwidth=10, fill="#60B3CE") +
+xlab('Actividad total') + ylab('Frecuencia de usuarios')
+
+ggplot(actividades2015, aes(y=Total, x=reorder(Modulo,Total))) +geom_bar(stat="identity", width=0.2)  +theme_minimal() + coord_flip() + labs(x="", y="")
+
+\end{lstlisting}	
+	
