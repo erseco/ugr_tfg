@@ -5,7 +5,10 @@
 La plataforma Prado usa la 2.6.4 de moodle aunque la última versión estable a 15 de mayo de 2017 es la 3.3. La rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}.
 
 \bigskip
-Prado2 usa como plantilla el tema Archaius \cite{moodletheme}, desarrollada por el programador colombiano Daniel Múnera Sánchez. Podemos ver la versión de la plantilla accediendo a \url{http://prado.ugr.es/moodle/theme/archaius/README.md} viendo que la versión instalada es del 11 de agosto de 2014, cuando dicho tema, a pesar de haber sido abandonado por su autor tiene versiones mas actualizadas que solucionan diversos problemas.
+Prado2 usa como plantilla el tema Archaius \cite{moodletheme}, desarrollada por el programador colombiano Daniel Múnera Sánchez. Podemos ver la versión de la plantilla accediendo a \url{http://prado.ugr.es/moodle/theme/archaius/README.md} viendo que la versión instalada es del 11 de agosto de 2014, cuando dicho tema tiene versiones mas actualizadas que solucionan diversos problemas.
+
+\bigskip
+Nos pusimos en contacto con el desarrollador de la plantilla, y muy amablemente nos contestó a todas las dudas que teníamos sobre la misma. También nos confirmó que había abandonado el desarrollo de la plantilla por falta de tiempo con lo que no habrá más actualizaciones de la misma.
 
 \bigskip
 Al acceder a la url \url{http://prado.ugr.es/} nuestro navegador descargará un archivo index.html (ver figura \ref{redireccionhttp}) que le dirá al navegador que tiene que hacer una nueva petición para descargar la web desde el subdirectorio /moodle/, las redirecciones http están desaconsejadas y hay otras formas de resolver este problema utilizando una única petición htt, por experiencia propia esto deja entrever que se partió de una instalación rápida desempaquetando el fichero comprimido de moodle y empezando a trabajar desde ahí. Se podría entender que se ha dejado para dejar la referencia a que se está usando el paquete moodle pero se han eliminado todas las referencias a la misma, incluso los enlaces a su licencia cosa a la que obliga la GPLv3 que es la licencia de moodle.
@@ -366,18 +369,46 @@ lti             & 92            & FALTA         \\ \hline
 \end{table}
 
 
-
-
 \section{Análisis de usabilidad de la plataforma}
 
-
-Lo primero que llama la atención al entrar en la plataforma es el banner central de información que acapara toda la atención obligando al usuario a desplazarse para ver la información de los cursos que quiere ver.
-
-\bigskip
-Pienso que una plataforma va a ser usada en su mayor medida por alumnos y profesores quizá se debería dar prioridad a la información de los cursos en lugar de información superflua, así encontrarían la información de manera mas rápida aumentando su grado de satisfacción
+Analizamos la plataforma como un usuario normal para ver con que problemas se podía encontrar a la hora de usar Prado. Nos hemos centrado en los problemas de usabilidad con fácil solución y que harían la experiencia de usuario mucho más placentera.
 
 \bigskip
-El tener varias vistas de las mismas secciones da lugar a confusión, por ejemplo la vista principal muestra los cursos en los que estoy matriculado y si hago click en la vis muestra la misma información con algunas diferencias pero es una vista distinta de cuando le doy a la opción 
+En nuestro análisis hemos encontrado los siguientes problemas:
+
+\begin{itemize}
+
+\item Aparece la información para iniciar sesión en la cabecera y en el pié de la página, esto es redundante, debería aparecer solo en la cabecera.
+\item El selector de idioma ocupa una gran parte de la pantalla siendo un elemento de uso poco común. De hecho como veremos más adelante la traducción al inglés brilla por su ausencia, lo ideal en estos casos es colocar los enlaces para cambiar el idioma en el pié de página. Hay que tener en cuenta que la plataforma detecta el idioma del navegador para seleccionar Español o Inglés. Además debería poner 'Castellano' en lugar de 'Español - Internacional'.
+\item El título 'PLATAFORMA DE RECURSOS DE APOYO A LA DOCENCIA' no debería aparecer como una imagen, ya que además de no estar traducida hace que no todos los dispositivos la muestren bien al ser una imagen demasiado ancha.
+\item La ventana de login muestra una imagen con la ruta https hacia el proveedor de identidad del CSIRC, un poco mas abajo nos encontramos un botón con la misma ruta pero con http. El IDP automáticamente redirige a https, este botón debería ocultarse. El acceso para administradores también debería ocultarse.
+\item Debajo del banner de título aparece un menú con fondo azul en el que siempre aparece la opción 'Entrar' aunque ya hayamos iniciado la sesión en la plataforma.
+\item La opción 'Comunidad' no tiene un uso tan importante como para aparecer ahí, quizá debería estar como un enlace en el pie. Además, podemos acceder al mismo desde el panel lateral.
+\item La opción 'Ayuda' lleva a una página externa del CEVUG para solicitar asistencia, al tener un diseño distinto debería abrirse en una ventana nueva.
+\item Con la sesión iniciada se muestran los cursos del alumno, pero al haber cursos con el mismo nombre hay que ir probando uno a uno con lo cual esta opción tampoco tiene utilidad.
+\item Si se está dentro de un curso también vemos la opción 'Calificaciones', esta opción se puede ver desde el panel lateral y teniendo en cuenta que la mayoría de los profesores no ponen las calificaciones en prado quizá esta opción debería ocultarse.
+\item En resumidas cuentas, este menú superior se podría ocultar sin ningún tipo de problema, ganando muchísimo espacio en la pantalla.
+\item El banner central de información acapara toda la atención obligando al usuario a desplazarse para ver la información de los cursos que quiere ver. Dicho banner no muestra información útil con lo que quizá merecería quitarlo o por lo menos darle la opción a los usuarios de ocultarlo.
+\item Aunque se permite ocultar los paneles laterales al recargar la página se vuelven a mostrar, debería memorizarse el estado seleccionado.
+\item Al desplegar las secciones de cada panel lateral ocurre lo mismo que al ocultarlos, no se recuerda cual se tenía abierto. Esto resulta particularmente molesto al hacer uso del calendario en el panel derecho, pues al cambiar de mes se recarga la página ocultando la sección.
+\item El panel de la izquierda no sigue un orden lógico, según se va navegando por la página tiene entre 2 y 4 secciones principales aunque contenga la misma información. Pasa lo mismo en el derecho al entrar en una asignatura.
+\item El panel derecho muestra una sección de 'Problemas' con información para los profesores que los alumnos no deberían de ver.
+\item Al ver nuestro perfil no debería mostrarse la opción 'Personalizar esta página' ya que esto es lo que se usa para editar los cursos. Esto lleva a confusión al usuario pues piensa que esta opción es para editar su perfil y no es así.
+\item Las insignias deberían ocultarse pues no se están utilizando.
+\item Hay diversas vistas diferentes de 'Mis cursos', lo cual es bastante confuso.
+\item Una vez dentro de un curso el foro de novedades se debería ocultar por defecto a no ser que el profesor lo active.
+\item En la vista principal de la asignatura, para ver los archivos hay que desplegar primero las diferentes opciones, quizá sería mejor mostrar un árbol para poder desplegarlo todo de una vez en lugar de uno en uno.
+\item Al entregar una tarea muchas veces se olvida de enviar para calificación, lo ideal sería que por defecto al crear una tarea sea el envío automático para calificación.
+\item No se puede ver si han habido cambios en los archivos subidos por el profesor, ni la fecha de subida ni ninguna información. De hecho, el nombre del archivo no tiene por qué coincidir con el texto que aparece en Prado, aumentando la confusión.
+\item No se pueden descargar todos los archivos de una asignatura de golpe, hay que ir uno a uno.
+\item Cuando un profesor está en modo edición puede agregar archivos de forma sencilla arrastrándolos sobre la ventana de cursos, pero la web no lo explica. En la plantilla por defecto de moodle si que sale una notificación informando de esta funcionalidad. Esto se debería mostrar ya que facilita mucho la tarea de subir archivos a la plataforma.
+\item Cuando un profesor va a agregar una actividad el menú que sale es enorme, quizá se debería mostrar los mas utilizados, dejar el resto ocultos y permitir mostrarlo en una vista avanzada.
+\item La vista de 'Todos los cursos' se debería ocultar, pues es imposible utilizar un desplegable con mas de 1000 opciones.
+\item La vista 'Novedades del sitio' no muestra nada y al seleccionarla cambia de posición en el panel lateral, lo ideal sería ocultarla.
+\item Se muestran varias asignaturas iguales, esto es confuso. Aunque internamente se creen para facilitar la administración lo ideal sería agruparlas en la misma vista para los alumnos.
+\item El sistema de mensajería contiene un desplegable con la opción 'Enviar mensaje', para una sola opción sería mas sencillo un botón.
+
+\end{itemize}
 
 \section{Análisis de accesibilidad de la plataforma}
 
@@ -388,32 +419,39 @@ El test TAW nos indica que los colores de la plataforma pueden llegar a generar 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.0\textwidth]{../screenshots/tawdis}
+\includegraphics[width=0.9\textwidth]{../screenshots/tawdis}
 \caption{Resultados de usabilidad con TAW}
 \label{fig:tawdis}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{../screenshots/tenon}
+\includegraphics[width=0.8\textwidth]{../screenshots/tenon}
 \caption{esultados de usabilidad con tenion.io}
 \label{fig:tenon}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{../screenshots/htmlcodesniffer}
+\includegraphics[width=0.6\textwidth]{../screenshots/htmlcodesniffer}
 \caption{esultados de usabilidad con HTML CodeSniffer}
 \label{fig:htmlcodesniffer}
 \end{figure}
 
 
 \bigskip
+Aunque la plantilla utilizada es responsive\footnote{El diseño web responsive o adaptativo es una técnica de diseño web que busca la correcta visualización de una misma página en distintos dispositivos, desde ordenadores de escritorio a tablets y móviles}, los cambios realizados en la misma hacen que sea bastante incómoda de utilizar. Por un lado la vista principal debería mostrar mis cursos sin obligar a desplazarnos hacia abajo para obviar el mensaje de bienvenida. Al acceder a información como pueden ser calificaciones o entregas al no estar correctamente adaptado hay desplazarse horizontalmente y se pierde la noción de donde se está exactamente.
+
+\bigskip
+En la figura \ref{fig:capturamovil2} podemos ver como la ventana de inicio de sesión muestra una imagen que no está adaptada, con un botón mas abajo que realiza la misma función dando lugar a confusión, el acceso para personal técnico tampoco debería visualizarse y en la cabecera vemos como hay mucho espacio desperdiciado sin mostrar nada.
+
+\bigskip
+La plantilla tiene un menú 'hamburguesa' debajo de la imagen de perfil pero el ajuste realizado a la misma hace que se muestre parcialmente impidiendo su correcta utilización.
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{../screenshots/capturamovil2}
+\includegraphics[width=0.5\textwidth]{../screenshots/capturamovil2}
 \caption{Captura desde un teléfono móvil}
 \label{fig:capturamovil2}
 \end{figure}
