@@ -195,7 +195,7 @@ Tras una reunión en el CEVUG con los responsables de Prado2 mantenida el 23 de 
 
 Una vez definida la consulta se realizó al CSIRC una petición formal de datos. Tras varios intentos infructuosos de realizar la petición de forma telemática por parte del tutor se optó por realizarla de forma presencial en papel.
 
-El día 23 de Mayo nos remitieron desde el CEVUG una muestra de los datos de 2014 para ver si los datos eran correctos antes de darnos en fases los datos completos. La primera fase correspondiente a los datos de 2015 los tuvimos disponibles el 1 de Junio en un fichero csv\footnote{Los archivos CSV (del inglés comma-separated values) son un tipo de documento para representar datos en forma de tabla en las que las columnas se separan por comas.} de 500 megabytes conteniendo 3.119.094 registros.
+El día 23 de Mayo nos remitieron desde el CEVUG una muestra de los datos de 2014 para ver si los datos eran correctos antes de darnos en fases los datos completos. La primera fase correspondiente a los datos de 2015 los tuvimos disponibles el 1 de Junio en un fichero CSV\footnote{Los archivos CSV (del inglés comma-separated values) son un tipo de documento para representar datos en forma de tabla en las que las columnas se separan por comas.} de 500 megabytes conteniendo más de 3 millones de registros. El 7 de junio de 2017 recibimos los datos de 2015 en un fichero de 3,79 gigabytes conteniendo más de 20 millones de registros.
 
 
 \begin{lstlisting}
@@ -203,7 +203,7 @@ SQL> select  /*csv*/ l.id,l.time,rawtohex(sys.DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT
 
 \end{lstlisting}
 
-Con los datos recogidos y basándonos en el excelente articulo\cite{art_02} de James Ballard que aunque se centra en en el análisis de la nueva tabla de log de las versiones 2.7 y superiores nos sirvió de base con la que crear una serie de consultas en lenguaje R que procesara los datos para sacar conclusiones de los mismo. Dichas consultas se adjuntan en el anexo.
+Con los datos recogidos y basándonos en el excelente articulo\cite{art_02} de James Ballard, que aunque se centra en en el análisis de la nueva tabla de log de las versiones 2.7 y superiores, escribimos una serie de consultas en lenguaje R que procesara los datos para sacar conclusiones de los mismo. Dichas consultas se adjuntan en el anexo.
 
 \section{Análisis de usabilidad de la plataforma}
 
