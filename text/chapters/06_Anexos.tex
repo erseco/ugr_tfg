@@ -551,6 +551,18 @@ mdl_log$dts_hour <- as.POSIXct(mdl_log$dts_hour)
 
 #mdl_2015 <- subset(mdl_log, year == 2015)
 
+mdl_2015 <- subset(mdl_log, TIME > 1441058400 & TIME < 1467324000)
+
+mdl_2016 <- subset(mdl_log, TIME > 1441058400 & TIME < 1467324000)
+
+mdl_todo <- subset(mdl_log, TIME > 1441058400 & TIME < 1467324000)
+
+
+#d <- tbl_df(mdl_log)
+d <- tbl_df(mdl_2015)
+d <- tbl_df(mdl_2016)
+d <- tbl_df(mdl_todo)
+
 d <- tbl_df(mdl_log)
 #d %>% mutate(time = as.POSIXct(time))
 #d %>% mutate(TIME = as.POSIXct(time))
