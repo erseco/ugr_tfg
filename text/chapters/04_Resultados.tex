@@ -4,23 +4,22 @@ En este capítulo pasamos a detallar los resultados de todos y cada uno de los a
 
 \section{Análisis general de la plataforma}
 
-La plataforma Prado usa la 2.6.4 de moodle aunque la última versión estable a 15 de mayo de 2017 es la 3.3. La rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}.
+La plataforma Prado usa la versión 2.6.4 de \textit{Moodle}, aunque la última versión estable a 15 de mayo de 2017 es la 3.3. La rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}.
 
 \bigskip
-Prado2 usa como plantilla el tema Archaius \cite{moodletheme}, desarrollada por el programador colombiano Daniel Múnera Sánchez. Podemos ver la versión de la plantilla accediendo a \url{http://prado.ugr.es/moodle/theme/archaius/README.md} viendo que la versión instalada es del 11 de agosto de 2014, cuando dicho tema tiene versiones mas actualizadas que solucionan diversos problemas.
+Prado2 usa como plantilla el tema \textit{Archaius} \cite{moodletheme}, desarrollada por el programador colombiano Daniel Múnera Sánchez. Podemos ver la versión de la plantilla accediendo a \url{http://prado.ugr.es/moodle/theme/archaius/README.md} y viendo que la versión instalada es del 11 de agosto de 2014, cuando dicho tema tiene versiones más actualizadas que solucionan diversos problemas.
 
 \bigskip
 Nos pusimos en contacto con el desarrollador de la plantilla, y muy amablemente nos contestó a todas las dudas que teníamos sobre la misma. También nos confirmó que había abandonado el desarrollo de la plantilla por falta de tiempo con lo que no habrá más actualizaciones de la misma.
 
 \bigskip
-Al acceder a la url \url{http://prado.ugr.es/} nuestro navegador descargará un archivo index.html (ver figura \ref{redireccionhttp}) que le dirá al navegador que tiene que hacer una nueva petición para descargar la web desde el subdirectorio /moodle/, las redirecciones http están desaconsejadas y hay otras formas de resolver este problema utilizando una única petición htt, por experiencia propia esto deja entrever que se partió de una instalación rápida desempaquetando el fichero comprimido de moodle y empezando a trabajar desde ahí. Se podría entender que se ha dejado para dejar la referencia a que se está usando el paquete moodle pero se han eliminado todas las referencias a la misma, incluso los enlaces a su licencia cosa a la que obliga la GPLv3 que es la licencia de moodle.
+Al acceder a la url \url{http://prado.ugr.es/} nuestro navegador descargará un archivo \texttt{index.html} (ver figura \ref{redireccionhttp}), cuya única función es redireccionar al subdirectorio \texttt{/moodle/}. las redirecciones HTTP están desaconsejadas y hay otras formas más apropiadas de resolver este problema utilizando una única petición HTTP. Por experiencia propia, esto deja entrever que se partió de una instalación rápida desempaquetando el fichero comprimido de \textit{Moodle} y empezando a trabajar desde ahí. A primera vista, parece que se ha hecho así para hacer referencia a que se está usando el paquete \textit{Moodle} pero se han eliminado todas las referencias al mismo, incluso los enlaces a su licencia, cosa a la que obliga la GPLv3, licencia de \textit{Moodle}.
 
 \bigskip
-Curiosamente Ágora \url{http://pefc5.ugr.es} que es la instalación de moodle que utilizan en la facultad de psicología resuelve esto con una redirección 302
+Curiosamente Ágora \url{http://pefc5.ugr.es}, que es la instalación de \textit{Moodle} que utilizan en la facultad de psicología, resuelve esto con una redirección 302.
 
 \bigskip
-En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaban Oracle por requerimiento del CSIRC, pues no daban soporte a ningún otro motor de base de datos y que habían que tenido que realizar diversas adaptaciones al código de moodle para que funcionara sobre este motor. Tras la recepción de los datos por parte del CEVUG analizando la consulta que lanzaron para obtener los datos pudimos certificar que efectivamente estaban usando Oracle pues la consulta hacía uso de funciones propias de Oracle pero que moodle soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.
-
+En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaban \textit{Oracle} por requerimiento del CSIRC, pues no daban soporte a ningún otro motor de base de datos y además habían tenido que realizar diversas adaptaciones al código de \textit{Moodle} para que funcionara sobre este motor. Tras la recepción de los datos por parte del CEVUG y analizando la consulta que lanzaron para obtener los datos, pudimos certificar que efectivamente estaban usando \textit{Oracle}, pues la consulta hacía uso de funciones propias de \textit{Oracle}, pero que \textit{Moodle} soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle, por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.
 
 \begin{figure}
 \centering
@@ -30,66 +29,72 @@ En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaba
 \end{figure}
 
 \bigskip
-Las versiones antiguas de moodle utilizaban la librería YUI desarrollada por Yahoo cuyo desarrollo se abandonó el 29 de agosto de 2014 \cite{art_01} y a partir de la 2.9 se comenzó a migrar a la librería jQuery. Aunque moodle 2.6 utiliza YUI la plantilla Archaius usa varias funciones de la librería jQuery 1.10.2 \url{https://prado.ugr.es/moodle/theme/jquery.php/core/jquery-1.10.2.min.js} que fue liberada el 3 de Julio de 2013 y que teniendo en cuenta que la librería está ya por su versión 3.2 vemos que está claramente obsoleta.
+Las versiones antiguas de \textit{Moodle} utilizaban la librería YUI, desarrollada por \textit{Yahoo} y cuyo desarrollo se abandonó el 29 de agosto de 2014 \cite{art_01}. A partir de la versión 2.9 se comenzó a migrar a la librería jQuery. Aunque \textit{Moodle} 2.6 utiliza YUI, la plantilla Archaius usa varias funciones de la librería jQuery 1.10.2 \url{https://prado.ugr.es/moodle/theme/jquery.php/core/jquery-1.10.2.min.js} que fue liberada el 3 de Julio de 2013 y que, teniendo en cuenta que la librería está ya por su versión 3.2, vemos que está claramente obsoleta.
 
 \bigskip
 Se está utilizando Apache como servidor HTTP, notar que se oculta su versión haciéndolo mas seguro ante posibles ataques dirigidos, esto es un acierto.
 
 \bigskip
-El servidor tiene instalada la versión 5.4.45 que fue liberada el 3 de septiembre de 2015 y que como podemos ver en \url{http://php.net/supported-versions.php} ya no está soportada. En este caso hay dos problemas, por un lado el usar una versión tan anticuada de PHP y por otra no ocultar la versión, siendo muy fácil encontrar vulnerabilidades para dicha versión.
+El servidor tiene instalada la versión 5.4.45 que fue liberada el 3 de septiembre de 2015 y que, como podemos ver en \url{http://php.net/supported-versions.php}, ya no está soportada. En este caso hay dos problemas, por un lado el usar una versión tan anticuada de PHP y por otra no ocultar la versión, siendo muy fácil encontrar vulnerabilidades para dicha versión.
 
 \section{Entrevistas personales}
 
-Como ya hemos comentado se hicieron una serie de entrevistas informales en las que simplemente se anotaban los puntos de vista de los usuarios así como sus quejas y sugerencias y se culminaba con un pequeño test de usabilidad consistente en pedir a los usuarios que cambiaran su foto de perfil de Prado2. En el test participaron cerca de 30 personas, tanto profesores y usuarios de Prado2 como gente externa que nunca había visto la plataforma.
+Como ya hemos comentado, se hicieron una serie de entrevistas informales. Dichas entrevistas consistían en anotar tanto los puntos de vista de los usuarios como sus quejas y sugerencias. Al finalizar, se hacía un pequeño test de usabilidad consistente en pedir a los usuarios que cambiaran su foto de perfil de \textit{Prado2}. En el test participaron cerca de 30 personas: tanto profesores y usuarios de \textit{Prado2} como gente externa que nunca había visto la plataforma.
 
 \subsection{Test de usabilidad}
 
-Para cambiar la imagen de perfil de prado operativa correcta a seguir es: \texttt{Administración \textrightarrow Editar Perfil \textrightarrow  Imagen del Usuario} y aunque puede parecer sencillo nadie bajó del minuto y medio, de hecho, hubo un estudiante del Grado en Ingeniería Informática que tardó más de 4 minutos.
+Para cambiar la imagen de perfil de \textit{Prado2} la ruta correcta a seguir es:
+
+\begin{center}
+Administración $\rightarrow$ Editar Perfil $\rightarrow$ Imagen del Usuario
+\end{center}
+
+y aunque puede parecer sencillo, nadie bajó del minuto y medio mientras probaba erráticamente varias rutas. Hubo un estudiante del Grado en Ingeniería Informática que tardó más de 4 minutos.
 
 \bigskip
-Todos los usuarios repetían básicamente el mismo patrón, como se les pedía que cambiaran la imagen del perfil lo primero que hacían era hacer click en la imagen para ver si salía alguna opción de editar, lo que deja entrever lo lejos que está la plantilla actual del uso real que hacen los usuarios.
+Todos los usuarios repetían el mismo patrón: como se les pedía que cambiaran la imagen del perfil, lo primero que hacían era hacer click en la imagen de perfil para ver si salía alguna opción de editar. Esto deja entrever lo lejos que está la plantilla actual del uso real que hacen los usuarios.
 
 \subsection{Problemas notificados por los usuarios}
 Además los distintos usuarios nos hicieron notar los siguientes problemas y/o carencias con los que se habían encontrado:
 
 \begin{enumerate}
 
-\item No se puede desmatricular de asignaturas de otros cursos o de las que el alumno ha cambiado de grupo
+\item Es imposible desmatricularse de asignaturas de otros cursos o de las que el alumno ha cambiado de grupo.
 
-\item Aunque se entre en inglés hay muchas cosas que aparecen en castellano, de hecho están mezclados ambos idiomas
+\item Aunque se escoja como idioma el inglés hay muchas cosas que aparecen en castellano, de hecho están mezclados ambos idiomas
 
-\item La ventana de solicitud de contraseña de prado2 (el IDP del CSIRC) coge la configuración de idioma del navegador del usuario en lugar de la que viene de prado, esto hace que si por ejemplo tu navegador está en inglés pero tu estás mostrando prado en español, al acceder al IDP la ventana se mostrará en inglés.
+\item La ventana de solicitud de contraseña de \textit{Prado2} (el IDP del CSIRC) coge la configuración de idioma del navegador del usuario en lugar de la que viene de Prado. Esto hace que si por ejemplo tu navegador está en inglés pero tu estás mostrando Prado en español, al acceder al IDP la ventana se muestre en inglés.
 
-\item Hay que bajar los materiales de la asignatura uno a uno en lugar de dar una opción para descargar todo el conjunto
+\item Hay que descargar los materiales de la asignatura uno a uno en lugar de dar una opción para descargar todo el conjunto en un archivo comprimido.
 
 \item Si se está navegando por la miga de pan se llegan a mostrar unos listados de asignaturas con mas de mil registro haciendo inusable el seleccionar alguna
 
-\item El menú superior de asignaturas es inusable por los profesores pues no saben a ciencia cierta a que asignatura están accediendo hasta que han hecho click ya que muchas asignaturas comparten nombre simplemente cambiando los profesores
+\item El menú superior de asignaturas es inusable por los profesores pues no saben a ciencia cierta a qué asignatura están accediendo hasta que han hecho click, ya que muchas asignaturas comparten nombre simplemente cambiando los profesores.
 
-\item No se notifican los cambios y/o novedades en la plataforma, encontrando a veces que algo que funcionaba de una determinada manera ha cambiado, provocando confusión.
+\item No se notifican los cambios y/o novedades en la plataforma. Esto hace que a veces se cambie algo que funcionaba de una determinada manera y provoque confusión.
 
-\item Si un alumno contiene un carácter no ascii como pueden ser vocales acentuadas o una "ñ", a la hora de descargar los trabajos de dicho alumno la codificación del archivo será incorrecta y al desempaquetar el archivo .zip en sistemas windows aparece una carpeta vacía (en sistemas Linux no hay problema). En este caso el profesor recibió una queja del alumno por que no le habían calificado una serie de ejercicios y el profesor estuvo haciendo comprobaciones en varios sistemas y lo puso en conocimiento del CSIRC, donde le aseguraron que era problema de su equipo.
+\item Si el nombre del alumno contiene un carácter no ASCII, como pueden ser vocales acentuadas o una ``ñ'', a la hora de descargar los trabajos de dicho alumno la codificación del archivo será incorrecta y al desempaquetar el archivo .zip en sistemas windows aparece una carpeta vacía (en sistemas Linux no hay problema). En este caso el profesor recibió una queja del alumno por que no le habían calificado una serie de ejercicios. El profesor estuvo haciendo comprobaciones en varios sistemas y lo puso en conocimiento del CSIRC, donde le aseguraron que era problema de su equipo.
 
-\item En determinados listados no aparecen barras de desplazamiento horizontal por lo que aparece la información cortada, en otros listados al contrario dichas barras son tan largas que en numerosas  ocasiones se ha perdido la localización espacial de la fila y se ha puntuado al alumno incorrecto.
+\item En determinados listados, no aparecen barras de desplazamiento horizontal por lo que aparece la información cortada. En otros listados, al contrario, dichas barras son tan largas que en numerosas ocasiones se ha perdido la localización espacial de la fila y se ha puntuado al alumno incorrecto.
 
-\item Hay diferentes vistas de la ventana "Mis cursos" con la consecuente confusión
+\item Hay diferentes vistas de la ventana ``Mis cursos'' con la consecuente confusión
 
-\item No se notifica a los usuarios cuando hay material nuevo o modificado obligando a comprobar periódicamente el material uno a uno.
+\item No se notifica a los usuarios cuando hay material nuevo o modificado, obligando a comprobar periódicamente el material uno a uno.
 
 \item Las calificaciones finales no se muestran aunque el profesor las publique.
 
-\item A la hora de mostrar las calificaciones salen trozos de pruebas ocultas de otros cursos y otros grupos sin rellenar.
+\item A la hora de mostrar las calificaciones, salen trozos de pruebas ocultas de otros cursos y otros grupos sin rellenar.
 
-\item No se notifica la convocatorias de exámenes.
+\item No se notifican la convocatorias de exámenes.
 
-\item El sistema de mensajería es complicado de encontrar y mucho mas complicado de usar, primeramente el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos, luego en lugar de aparecer un botón que ponga "Enviar mensaje" aparece un desplegable cuya única opción es "Enviar mensaje" (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al darle a esa opción pasamos a una ventana donde podemos redactar el mensaje aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje el profesor no recibe una copia pese a haberse marcado, con lo que no puede comprobar que efectivamente se está enviado el correo a todos los alumnos. El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado y por último y no menos importante no permite editar el asunto del mensaje. Si además sucede algún problema al enviar mensajes a los alumnos nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que reza "Algo ha ido mal al enviar mensajes a los usuarios seleccionados. Algunos pueden haber recibido el mensaje".
+\item El sistema de mensajería es complicado de encontrar y mucho más complicado de usar. En primer lugar, el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos. Además, en lugar de aparecer un botón que ponga  ``Enviar mensaje'', aparece un desplegable cuya única opción es ``Enviar mensaje'' (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al seleccionar esa opción pasamos a una ventana donde podemos redactar el mensaje, aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje, el profesor no recibe una copia pese a haberse marcado, con lo que no puede comprobar que efectivamente se está enviado el mensaje a todos los alumnos. El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado. Por último, y no menos importante, no permite editar el asunto del mensaje. Si además sucede algún problema al enviar mensajes a los alumnos, nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que dice  ``Algo ha ido mal al enviar mensajes a los usuarios seleccionados. Algunos pueden haber recibido el mensaje''.
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{../screenshots/pantallazoPradoenviarMensaje}
 \caption{Vista principal del clon de Prado}
-\label{fig:Lista desplegable Enviar Mensaje}
+\label{fig:pantallazoPradoenviarMensaje}
 \end{figure}
 
 \begin{figure}[h!]
@@ -100,53 +105,63 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 \end{figure}
 
 
-\item No hay una opción sencilla para crear un listado con los alumnos de cada grupo, opción que puede ser interesante, por ejemplo, para imprimir y llevar un control manual.
+\item No hay una opción sencilla para crear un listado con los alumnos de cada grupo. Esta  opción puede ser interesante, por ejemplo, para imprimir y llevar un control manual.
 
-\item En la vista de grupos los nombres salen cortados y salen los apellidos de los alumnos pero no aparece el nombre, siendo un problema para alumnos con los mismos apellidos, además no se puede reordenar de ninguna forma.
+\item En la vista de grupos, los nombres salen cortados y además sólo aparecen los apellidos de los alumnos pero no sus nombres. Esto es un problema para alumnos con los mismos apellidos, además no se puede reordenar de ninguna forma.
 
-\item El menú superior de Entrar, Comunidad, Ayuda, Mis cursos no tiene un sentido claro: La opción Entrar aparece siempre aunque la sesión esté iniciada, el menú Comunidad está accesible mas abajo y no tiene una importancia tal y como aparecer en ese menú, el menú Ayuda nos lleva a una pagina externa del CEVUG para abrir un ticket y el menú de cursos lleva a una vista que no es la misma que la de la página principal de Prado2.
+\item El menú superior donde aparecen las opciones ``Entrar'', ``Comunidad'', `Ayuda'' y ``Mis cursos'' no tiene un sentido claro: La opción ``Entrar` aparece siempre aunque la sesión esté iniciada, el menú ``Comunidad` está accesible más adelante y no tiene una importancia tal y como aparecer en la parte superior, el menú ``Ayuda'' nos lleva a una pagina externa del CEVUG para abrir un ticket y el menú ``Mis Cursos'' lleva a una vista que no es la misma que la de la página principal de \textit{Prado2}.
 
-\item La búsqueda de cursos suele tarda demasiado en responder.
+\item La búsqueda de cursos suele tardar demasiado en responder.
 
 \item Las novedades del curso y del sitio no parecen tener ninguna utilidad.
 
-\item Aunque se configuren agrupamientos de alumnos, los mismos luego no se pueden utilizar para nada, de hecho no sirven ni para hacer un listado de alumnos por grupo.
+\item Aunque se configuren agrupamientos de alumnos, los mismos luego no se pueden utilizar para nada. De hecho, no sirven ni para hacer un listado de alumnos por grupo.
 
-\item No se entiende la utilidad del foro privado, quizá esa opción no debería estar, igual sucede con las insignias.
+\item No se entiende la utilidad del foro privado, quizá esa opción no debería estar. Igual sucede con las insignias.
 
-\item El árbol de navegación lateral es confuso y la estructura de bloques no es consistente, además en cada cambio de pagina se vuele a mostrar la vista por defecto, se puede hacer la prueba mostrando el bloque de calendario de la parte derecha haciendo click en cambiar de mes, vemos que se recarga la pagina ocultando de nuevo el bloque. Al entrar en la página aparecen a la izquierda 4 bloques diferenciados: Enlaces, Menú Principal, Navegación y Administración pero al entrar en cualquier opción los dos primeros desaparecen.
+\item El árbol de navegación lateral es confuso y la estructura de bloques no es consistente. Además, en cada cambio de página se vuelve a mostrar la vista por defecto. Se puede hacer la prueba mostrando el bloque ``Calendario'' de la parte derecha y haciendo click en cambiar de mes, vemos que se recarga la pagina ocultando de nuevo el bloque ``Calendario''. Al entrar en la página aparecen a la izquierda cuatro bloques diferenciados: ``Enlaces'', ``Menú Principal'', ``Navegación'' y ``Administración'' pero, al entrar en cualquier opción, los dos primeros desaparecen.
 
 \item En los listados no se puede ordenar por rol del usuario, por lo que los distintos profesores de una asignatura aparecen mezclados con los alumnos.
 
-\item Aunque se oculten los bloques laterales con las flechas que hay para tal cometido al recargar la página esos bloques vuelven a aparecer.
+\item Aunque se oculten los bloques laterales con las flechas que hay para tal cometido, al recargar la página esos bloques vuelven a aparecer.
 
+\item Si hago colapsar las columnas de navegación laterales (flechas izquierda y derecha), en cuanto hago click en otro enlace vuelven a aparecer. Esto obliga a estar colapsándolas todo el rato.
 
-\item Si hago colapsar las columnas de navegación laterales (flechas izquierda y derecha), en cuanto pincho en otro enlace me vuelven a aparecer. Tengo que estar colapsándolas todo el rato.
+%\item Las herramientas de grupos/agrupamientos me han dado algo de trabajo. Creo que ya lo controlo, pero me da la sensación de que podrían ser más fáciles.
 
-\item Las herramientas de grupos/agrupamientos me han dado algo de trabajo. Creo que ya lo controlo, pero me da la sensación de que podrían ser más fáciles.
-\item Si envío un mensaje a un estudiante a través de moodle, no puedo poner un 'Asunto'. Imagino que simplemente le sale en 'Asunto' el nombre de la asignatura, pero me gustaría poder poner algo más específico.
-\item Todos los cursos pongo un cuestionario de valoración de la asignatura que los estudiantes pueden responder anónimamente. Moodle preserva el anonimato en las respuestas, pero no en el 'registro de actividad'. Es decir, se puede saber quiénes respondieron al cuestionario e incluso, si uno estuviera muy pendiente de cada actualización de respuestas, quién es responsable de cada respuesta. Creo que cuando una actividad se etiqueta como anónima, el acceso a la misma debería desaparecer del registro de actividad.
-\item Al poner una fecha de inicio y fin de una actividad, debería aparecer por defecto el año en que estamos. En una ocasión me ocurrió que la actividad se daba por cerrada un año antes.
-\item No sé de quién depende esto pero, por favor, que aparezcan en moodle todos los estudiantes matriculados en la asignatura, y sólo ellos.
+\item Al enviar un mensaje a un estudiante a través de \textit{Moodle}, no se puede poner un ``Asunto''. %Imagino que simplemente le sale en 'Asunto' el nombre de la asignatura, pero me gustaría poder poner algo más específico.
 
-\item Es una locura el tema de la matrícula de los estudiantes; me han escrito estudiantes para decirme que a pesar de estar en otro curso y no haberse matriculado nunca en mi asignatura, aparecen y, por tanto, les llegan los mensajes y tienen acceso a la plataforma. Por el contrario, hay muchos estudiantes que tengo que matricular manualmente porque, a pesar de estar en mi grupo, no aparecen!!!
+\item Aunque \textit{Moodle} preserve el anonimato en las respuestas de los cuestionarios, no preserva dicho anonimato en el ``registro de actividad''. Es decir, se puede saber quién ha respondido a la encuesta e incluso, si uno está pendiente de cada actualización del registro, saber quién es el autor de cada respuesta. Si una actividad se etiqueta como anónima, el acceso a la misma debería desaparecer del registro de actividad.
+
+%\item Todos los cursos pongo un cuestionario de valoración de la asignatura que los estudiantes pueden responder anónimamente. Moodle preserva el anonimato en las respuestas, pero no en el 'registro de actividad'. Es decir, se puede saber quiénes respondieron al cuestionario e incluso, si uno estuviera muy pendiente de cada actualización de respuestas, quién es responsable de cada respuesta. Creo que cuando una actividad se etiqueta como anónima, el acceso a la misma debería desaparecer del registro de actividad.
+
+\item Al poner una fecha de inicio y fin de una actividad, debería aparecer por defecto el año en que estamos. Un usuario nos contó que en una ocasión, la actividad se daba por cerrada un año antes.
+
+%\item No sé de quién depende esto pero, por favor, que aparezcan en moodle todos los estudiantes matriculados en la asignatura, y sólo ellos.
+
+\item Hemos notado también un malestar general con los estudiantes que inscritos automáticamente en las asignaturas. En algunos casos, se inscriben estudiantes que no están matriculados y en otros, alumnos matriculados no aparecen inscritos en sus asignaturas.
+
+%\item Es una locura el tema de la matrícula de los estudiantes; me han escrito estudiantes para decirme que a pesar de estar en otro curso y no haberse matriculado nunca en mi asignatura, aparecen y, por tanto, les llegan los mensajes y tienen acceso a la plataforma. Por el contrario, hay muchos estudiantes que tengo que matricular manualmente porque, a pesar de estar en mi grupo, no aparecen!!!
 
 \item El problema de la adjudicación de grupos de alumnos en el master de educación. Aparecen los alumnos de todas las especialidades en la misma asignatura y todos los profesores pueden subir o borrar recursos de la plataforma, aunque no sean profesores de ese grupo en concreto.
 
+% MARTA: llego hasta aquí revisando. Después sigo :P
 
+\item Las sesiones de usuario (sobre todo cuando se visualiza desde el smartphone) se mantienen de una forma muy rara, ha habido veces que se ha cerrado sin motivo alguno y hay que volver a iniciar sesión. Adicionalmente, se debería habilitar un botón para recordar la sesión.
 
--Las sesiones de usuario (sobre todo cuando se visualiza desde el smartphone) se mantienen de una forma muy rara, ha habido veces que se ha cerrado sin motivo alguno y hay que volver a iniciar sesión. Adicionalmente, se debería habilitar un botón para recordar la sesión.
--La usabilidad deja mucho que desear, la plataforma no es nada intuitiva.
--En general los profesores no saben utilizar la opción de elegir grupo, optando por pasar una hoja en papel y que cada uno se apunte donde quiera.
--No se muestra con claridad los archivos nuevos o novedades en general, de forma que el usuario tiene que estar buscando qué ha visto ya y qué no.
--La plataforma funciona con lentitud y las caídas son muy frecuentes, en ocasiones en horas críticas para la entrega de ejercicios (entre las 22:00 y las 00:00)
--La plataforma en general carece de estilo y orden alguno, las cosas están por medio sin una estructura de calidad.
+\item La usabilidad deja mucho que desear, la plataforma no es nada intuitiva.
 
-  Estaba haciendo unas cosas del Departamento y he tenido que acceder a Prado. Entonces he caído en la cuenta de otras dos cosas que no tenía anotadas y para las que no hay opción directa en Prado: poner el horario de teoría y prácticas de la asignatura y poner el horario de tutorías del profesorado implicado (tampoco sale en la parte personal). En general, los datos de la asignatura (incluso objetivos, temario de teoría y temario de prácticas) y los del profesorado que la imparte, brillan por su ausencia. Dos puntos más, y gordos, a favor de SWAD.
+\item En general los profesores no saben utilizar la opción de elegir grupo, optando por pasar una hoja en papel y que cada uno se apunte donde quiera.
 
-  Todas esas cosas las he podido poner en Prado, pero en un archivo en pdf que yo me he creado con la presentación de la asignatura.
+\item No se muestra con claridad los archivos nuevos o novedades en general, de forma que el usuario tiene que estar buscando qué ha visto ya y qué no.
 
+\item La plataforma funciona con lentitud y las caídas son muy frecuentes, en ocasiones en horas críticas para la entrega de ejercicios (entre las 22:00 y las 00:00)
 
+\item La plataforma en general carece de estilo y orden alguno, las cosas están por medio sin una estructura de calidad.
+
+\item Estaba haciendo unas cosas del Departamento y he tenido que acceder a Prado. Entonces he caído en la cuenta de otras dos cosas que no tenía anotadas y para las que no hay opción directa en Prado: poner el horario de teoría y prácticas de la asignatura y poner el horario de tutorías del profesorado implicado (tampoco sale en la parte personal). En general, los datos de la asignatura (incluso objetivos, temario de teoría y temario de prácticas) y los del profesorado que la imparte, brillan por su ausencia. Dos puntos más, y gordos, a favor de SWAD.
+
+\item Todas esas cosas las he podido poner en Prado, pero en un archivo en pdf que yo me he creado con la presentación de la asignatura.
 \end{enumerate}
 
 \section{Encuesta a los usuarios}
