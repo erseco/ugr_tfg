@@ -1,6 +1,6 @@
 \chapter{Resultados}
 
-En este capítulo pasamos a detallar los resultados de todos y cada uno de los análisis realizados.
+En este capítulo pasamos a detallar los resultados de todos y cada uno de los análisis que realizamos en base a los que definimos en el capítulo anterior.
 
 \section{Análisis general de la plataforma}
 
@@ -19,7 +19,7 @@ Al acceder a la url \url{http://prado.ugr.es/} nuestro navegador descargará un 
 Curiosamente Ágora \url{http://pefc5.ugr.es} que es la instalación de moodle que utilizan en la facultad de psicología resuelve esto con una redirección 302
 
 \bigskip
-En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaban Oracle por requerimiento del CSIRC, pues no daban soporte a ningún otro motor de base de datos y que habían que tenido que realizar diversas adaptaciones al código de moodle para que funcionara sobre este motor. Tras la recepción de los datos por parte del CEVUG analizando la consulta que lanzaron para obtener los datos pudimos certificar que efectivamente estaban usando Oracle pues la consulta hacía uso de funciones propias de Oracle pero que moodle soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.  
+En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaban Oracle por requerimiento del CSIRC, pues no daban soporte a ningún otro motor de base de datos y que habían que tenido que realizar diversas adaptaciones al código de moodle para que funcionara sobre este motor. Tras la recepción de los datos por parte del CEVUG analizando la consulta que lanzaron para obtener los datos pudimos certificar que efectivamente estaban usando Oracle pues la consulta hacía uso de funciones propias de Oracle pero que moodle soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.
 
 
 \begin{figure}
@@ -42,18 +42,19 @@ El servidor tiene instalada la versión 5.4.45 que fue liberada el 3 de septiemb
 
 Como ya hemos comentado se hicieron una serie de entrevistas informales en las que simplemente se anotaban los puntos de vista de los usuarios así como sus quejas y sugerencias y se culminaba con un pequeño test de usabilidad consistente en pedir a los usuarios que cambiaran su foto de perfil de Prado2. En el test participaron cerca de 30 personas, tanto profesores y usuarios de Prado2 como gente externa que nunca había visto la plataforma.
 
-\bigskip
-Para cambiar la imagen de perfil de prado dos la ruta correcta a seguir es: Administración - > Editar Perfil - > Imagen del Usuario y aunque puede parecer sencillo nadie bajó del minuto y medio mientras probaba erráticamente en varios sitios, hubo un estudiante del Grado en Ingeniería Informática que tardó más de 4 minutos.
+\subsection{Test de usabilidad}
+
+Para cambiar la imagen de perfil de prado operativa correcta a seguir es: \texttt{Administración \textrightarrow Editar Perfil \textrightarrow  Imagen del Usuario} y aunque puede parecer sencillo nadie bajó del minuto y medio, de hecho, hubo un estudiante del Grado en Ingeniería Informática que tardó más de 4 minutos.
 
 \bigskip
-Todos los usuarios repetían básicamente el mismo patrón, como se les pedía que cambiaran la imagen del perfil lo primero que hacían era hacer click en la imagen para ver si salía alguna opción de editar, lo que deja entrever lo lejos que está la plantilla actual del uso real que hacen los usuarios. 
+Todos los usuarios repetían básicamente el mismo patrón, como se les pedía que cambiaran la imagen del perfil lo primero que hacían era hacer click en la imagen para ver si salía alguna opción de editar, lo que deja entrever lo lejos que está la plantilla actual del uso real que hacen los usuarios.
 
-\bigskip
+\subsection{Problemas notificados por los usuarios}
 Además los distintos usuarios nos hicieron notar los siguientes problemas y/o carencias con los que se habían encontrado:
 
 \begin{enumerate}
 
-\item No se puedes desmatricular de asignaturas de otros cursos o de las que el alumno ha cambiado de grupo
+\item No se puede desmatricular de asignaturas de otros cursos o de las que el alumno ha cambiado de grupo
 
 \item Aunque se entre en inglés hay muchas cosas que aparecen en castellano, de hecho están mezclados ambos idiomas
 
@@ -67,7 +68,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item No se notifican los cambios y/o novedades en la plataforma, encontrando a veces que algo que funcionaba de una determinada manera ha cambiado, provocando confusión.
 
-\item Si un alumno contiene un carácter no ascii como pueden ser vocales acentuadas o una "ñ", a la hora de descargar los trabajos de dicho alumno la codificación del archivo será incorrecta y al desempaquetar el archivo .zip en sistemas windows aparece una carpeta vacía (en sistemas Linux no hay problema). En este caso el profesor recibió una queja del alumno por que no le habían calificado una serie de ejercicios y el profesor estuvo haciendo comprobaciones en varios sistemas y lo puso en conocimiento del CSIRC, donde le aseguraron que era problema de su equipo. 
+\item Si un alumno contiene un carácter no ascii como pueden ser vocales acentuadas o una "ñ", a la hora de descargar los trabajos de dicho alumno la codificación del archivo será incorrecta y al desempaquetar el archivo .zip en sistemas windows aparece una carpeta vacía (en sistemas Linux no hay problema). En este caso el profesor recibió una queja del alumno por que no le habían calificado una serie de ejercicios y el profesor estuvo haciendo comprobaciones en varios sistemas y lo puso en conocimiento del CSIRC, donde le aseguraron que era problema de su equipo.
 
 \item En determinados listados no aparecen barras de desplazamiento horizontal por lo que aparece la información cortada, en otros listados al contrario dichas barras son tan largas que en numerosas  ocasiones se ha perdido la localización espacial de la fila y se ha puntuado al alumno incorrecto.
 
@@ -128,7 +129,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 \item Al poner una fecha de inicio y fin de una actividad, debería aparecer por defecto el año en que estamos. En una ocasión me ocurrió que la actividad se daba por cerrada un año antes.
 \item No sé de quién depende esto pero, por favor, que aparezcan en moodle todos los estudiantes matriculados en la asignatura, y sólo ellos.
 
-\item Es una locura el tema de la matrícula de los estudiantes; me han escrito estudiantes para decirme que a pesar de estar en otro curso y no haberse matriculado nunca en mi asignatura, aparecen y, por tanto, les llegan los mensajes y tienen acceso a la plataforma. Por el contrario, hay muchos estudiantes que tengo que matricular manualmente porque, a pesar de estar en mi grupo, no aparecen!!! 
+\item Es una locura el tema de la matrícula de los estudiantes; me han escrito estudiantes para decirme que a pesar de estar en otro curso y no haberse matriculado nunca en mi asignatura, aparecen y, por tanto, les llegan los mensajes y tienen acceso a la plataforma. Por el contrario, hay muchos estudiantes que tengo que matricular manualmente porque, a pesar de estar en mi grupo, no aparecen!!!
 
 \item El problema de la adjudicación de grupos de alumnos en el master de educación. Aparecen los alumnos de todas las especialidades en la misma asignatura y todos los profesores pueden subir o borrar recursos de la plataforma, aunque no sean profesores de ese grupo en concreto.
 
@@ -153,50 +154,50 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 Durante el tiempo que estuvo operativa la encuesta recibimos un total de 617 respuestas, como se puede apreciar en el gráfico la mayor parte de las respuestas se obtuvieron tras las peticiones de participación via e-mail.
 
     \includegraphics[width=0.8\textwidth]{../charts/00_fecha}
- 	
+
 
 \begin{enumerate}
 
-  \item \textbf{Selección del tipo de usuario} 
-  
-  La mayor parte de los encuestados han sido alumnos superando el 83\% del ratio, casi un 15\% han sido profesores y el resto otro tipo de usuarios como pueden  ser estudiantes de doctorado y antiguos alumnos.
-  
-  
-	\includegraphics[width=0.8\textwidth]{../charts/01_esusted}
-  
+  \item \textbf{Selección del tipo de usuario}
 
-  \item \textbf{Selección de la titulación} 
-  
+  La mayor parte de los encuestados han sido alumnos superando el 83\% del ratio, casi un 15\% han sido profesores y el resto otro tipo de usuarios como pueden  ser estudiantes de doctorado y antiguos alumnos.
+
+
+	\includegraphics[width=0.8\textwidth]{../charts/01_esusted}
+
+
+  \item \textbf{Selección de la titulación}
+
   Debido al carácter de este proyecto esperábamos una mayoría de participantes de estudiantes de carreras impartidas en la ETSIIT como pueden ser el Grado de Ingeniería Informática, el Grado de Ingeniería en Tecnologías de Telecomunicación y el Doble Grado en Ingeniería Informática y Matemáticas, pero nos ha sorprendido ver la alta participación de otros estudios como pueden ser Administración y Dirección de Empresas, Medicina y Psicología por nombrar las titulaciones mas representativos de las casi 70 participantes.
-  
+
   \includegraphics[width=0.8\textwidth]{../charts/02_titulacion}
 
 
-  \item \textbf{¿Con qué periodicidad accede a Prado2?} 
-  
+  \item \textbf{¿Con qué periodicidad accede a Prado2?}
+
   La mayoría de los usuarios acceden a la plataforma con mucha frecuencia lo que refuerza nuestra opinión de que por un lado se tiene que optimizar la plataforma para que esos accesos sean lo mas breves y satisfactorios posibles, muchos de estos accesos se reducirían si el sistema notificara vía e-mail o a través de un aplicación móvil si hay alguna actividad nueva en mis cursos. De igual manera se reduciría carga en el servidor si se supiera que los documentos subidos por el profesor no han subido cambios y no hubiera que descargarlos de nuevo para comprobarlo manualmente.
 
-  
-  
+
+
   \includegraphics[width=0.8\textwidth]{../charts/03_periodicidad}
 
-  
-  \item \textbf{Califique las siguientes opciones según sus necesidades} 
+
+  \item \textbf{Califique las siguientes opciones según sus necesidades}
 
 Lo que mas piden los usuarios con diferencia es poder ver las calificaciones en Prado2, eso nos lo han hecho saber tanto en la opción de la encuesta como varios comentarios personales. Por otra parte muchos profesores nos han hecho saber que con el sistema actual tiene que hacer el trabajo por duplicado introduciendo las calificaciones en Prado2 y por otro lado en el sistema de actas de la UGR, cuando sería muchos mas cómodo poder generar en prado algún tipo de fichero CSV que les permitiera entregar las actas.
 
-  
+
 Casi todos los usuarios coinciden en que es vital el acceso desde dispositivos móviles, ya sea mediante una aplicación para smartphone como desde una web con un diseño adaptado a móviles ya que aunque el diseño actual tiene partes que si se adaptan para móviles no es apto para su uso ya que se hace inmanejable.
 
 Los usuarios también creen necesario un sistema de mensajería interna para la comunicación entre profesores y alumnos.
 
 En cambio, las opciones de Insignias, Blogs y Estadísticas no parecen ser vitales y de hecho mucha gente nos ha preguntado que utilidad tienen las Insginias pues no saben para que sirven.
 
-\includegraphics[width=0.8\textwidth]{../charts/04_califique} 
+\includegraphics[width=0.8\textwidth]{../charts/04_califique}
 
-  \item \textbf{Actividades y recursos} 
+  \item \textbf{Actividades y recursos}
 
-En cuanto a actividades podemos ver que al igual que en las instalaciones de moodle de otras universidades las opciones mas usadas son las de agregar tareas y archivos, hay que tener en cuenta que hay actividades que básicamente son similares a agregar archivo, como puede ser carpeta, documento, página y libro. 
+En cuanto a actividades podemos ver que al igual que en las instalaciones de moodle de otras universidades las opciones mas usadas son las de agregar tareas y archivos, hay que tener en cuenta que hay actividades que básicamente son similares a agregar archivo, como puede ser carpeta, documento, página y libro.
 
 Aunque moodle tiene actividades que podrían ser muy útiles, como pueden ser los paquetes SCORM e IMS, el desconocimiento y/o la falta de formación hace que la gente ignore para que sirven.
 
@@ -205,50 +206,50 @@ Igual pasa con algunas tareas específicas creadas para la UGR como pueden ser l
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{../charts/05_actividades_01} 
-\includegraphics[width=0.8\textwidth]{../charts/05_actividades_02} 
-\includegraphics[width=0.8\textwidth]{../charts/05_actividades_03} 
-\includegraphics[width=0.8\textwidth]{../charts/05_actividades_04} 
+\includegraphics[width=0.8\textwidth]{../charts/05_actividades_01}
+\includegraphics[width=0.8\textwidth]{../charts/05_actividades_02}
+\includegraphics[width=0.8\textwidth]{../charts/05_actividades_03}
+\includegraphics[width=0.8\textwidth]{../charts/05_actividades_04}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{../charts/05_actividades_05} 
-\includegraphics[width=0.8\textwidth]{../charts/05_actividades_06} 
+\includegraphics[width=0.8\textwidth]{../charts/05_actividades_05}
+\includegraphics[width=0.8\textwidth]{../charts/05_actividades_06}
 
 \end{figure}
 
   \item \textbf{¿Cómo calificaría Prado2?}
-  
-  
+
+
 A la hora de calificar prado han la mayoría de los usuarios han otorgado aprobado lo cual es una buena señal, aunque se piense que hay un descontento generalizado la gente entiende que una plataforma puede tener problemas y simplemente espera que se solucionen. Aun con el aprobado general, los usuarios si que encuentran en gran medida muy deficiente la usabilidad de la plataforma. En cambio el sentimiento general es el de que la plataforma es segura.
 
 \includegraphics[width=0.8\textwidth]{../charts/06_calificaria}
 
 
-  \item \textbf{¿Con cúales de las siguientes plataformas de la UGR ha trabajado?} 
+  \item \textbf{¿Con cúales de las siguientes plataformas de la UGR ha trabajado?}
 
 Aquí hay tres ganadores claves, y son evidentemente las plataformas que mas se han usado en todo el ámbito UGR como pueden ser el Tablon de Docencia, SWAD y el propio Prado2, luego encontramos plataformas usadas solo en la ETSIIT como pueden ser Tutor y DECSAI y algunos otros como el antiguo moodle del CEVUG y Ágora que es otra instalación de moodle utilizada en la facultad de Psicología.
 
 \includegraphics[width=0.8\textwidth]{../charts/07_plataformastrabajado}
 
-  \item \textbf{De las siguientes plataformas de la UGR ¿Cuál prefiere?} 
+  \item \textbf{De las siguientes plataformas de la UGR ¿Cuál prefiere?}
 
 A la hora de establecer la plataforma favorita está clara la prevalencia de SWAD ya que es una plataforma potente y con muchos años de uso aunque Prado2 también tiene una buena acogida y mas teniendo en cuenta la sensación de descontento generalizado que percibíamos antes de comenzar este proyecto, esto quiere decir que tampoco se va por mal camino con la plataforma actual. Curioso cuanto menos que el Tablón de Docencia, una arcaica plataforma utilizada en la UGR sigue teniendo sus partidarios pero como ya hemos comentado anteriormente una de las cosas con las que más cuesta lidiar en cuanto a la usabilidad es la resistencia de los usuarios al cambio, aunque este sea a mejor.
 
-\includegraphics[width=0.8\textwidth]{../charts/08_plataformas_prefiere} 
+\includegraphics[width=0.8\textwidth]{../charts/08_plataformas_prefiere}
 
-  \item \textbf{¿Ha encontrado algún error que debería ser subsanado en Prado2?} 
-
-Esta pregunta al ser de entrada libre se adjuntará en el listado en bruto de respuestas   
-
-  \item \textbf{Indique cuál es la funcionalidad que más le gusta de Prado2} 
+  \item \textbf{¿Ha encontrado algún error que debería ser subsanado en Prado2?}
 
 Esta pregunta al ser de entrada libre se adjuntará en el listado en bruto de respuestas
 
-  \item \textbf{Comentarios adicionales} 
-  
+  \item \textbf{Indique cuál es la funcionalidad que más le gusta de Prado2}
+
+Esta pregunta al ser de entrada libre se adjuntará en el listado en bruto de respuestas
+
+  \item \textbf{Comentarios adicionales}
+
 Esta pregunta al ser de entrada libre se adjuntará en el anexo VI
-  
+
 \end{enumerate}
 
 
@@ -256,7 +257,7 @@ Esta pregunta al ser de entrada libre se adjuntará en el anexo VI
 
 Tras analizar los registros proporcionados por el CEVUG de los años 2015 y 2016 vemos que los resultados de la encuesta cuadran con los mismos.
 
-No hemos analizado la muestra que nos proporcionaron de 2014 ya que fue en el curso 2015-2016 como se puede apreciar en la figura \ref{fig:distintonumerousuarios_2015}.
+\ref{fig:distintonumerousuarios_2015}.
 
 Lo primero a destacar son el notable incremento de peticiones del año 2015 al año 2016 que se puede apreciar en la tabla de la figura \ref{table:sumarioregistros}.
 
@@ -459,7 +460,7 @@ En nuestro análisis hemos encontrado los siguientes problemas:
 
 \section{Análisis de accesibilidad de la plataforma}
 
-Los resultados de los análisis automáticos de accesibilidad de la página principal de Prado (ver figuras \ref{fig:tawdis}, \ref{fig:tenon} y \ref{fig:htmlcodesniffer}) indican que la plataforma tiene algunos puntos que corregir para cumplir con el estándar AA de accesibilidad. No se ha podido analizar de forma automática las páginas internas pues dichas herramientas no pueden acceder a la Plataforma porque hay que autentificarse. El resultado de dicho análisis automático es positivo pues la gran mayoría son pequeños detalles como asignación de etiquetas \texttt{alt}\footnote{Las etiquetas 'alt' se usan en las imágenes como “alternate text”, es decir, un texto que describe la imagen.} en imágenes. 
+Los resultados de los análisis automáticos de accesibilidad de la página principal de Prado (ver figuras \ref{fig:tawdis}, \ref{fig:tenon} y \ref{fig:htmlcodesniffer}) indican que la plataforma tiene algunos puntos que corregir para cumplir con el estándar AA de accesibilidad. No se ha podido analizar de forma automática las páginas internas pues dichas herramientas no pueden acceder a la Plataforma porque hay que autentificarse. El resultado de dicho análisis automático es positivo pues la gran mayoría son pequeños detalles como asignación de etiquetas \texttt{alt}\footnote{Las etiquetas 'alt' se usan en las imágenes como “alternate text”, es decir, un texto que describe la imagen.} en imágenes.
 
 \bigskip
 El test TAW nos indica que los colores de la plataforma pueden llegar a generar confusión y que sería adecuado un esquema de colores que permita distinguir de forma mas fácil la información importante así como las secciones principales.
@@ -512,7 +513,7 @@ Si un usuario selecciona el idioma inglés, al ir a la página del IDP del CSIRC
 
 \section{Análisis de seguridad}
 
-Lo primero que nos llama la atención al realizar la auditoría de seguridad es que la página funciona sobre http, probamos a cargar la página con https y vemos que la página tiene instalado un certificado válido. El motivo de no forzar el protocolo https quizá sea por incompatibilidades de la plantilla, ya que hemos leíd que han arreglado problemas relativos a esto\cite{art_11}. 
+Lo primero que nos llama la atención al realizar la auditoría de seguridad es que la página funciona sobre http, probamos a cargar la página con https y vemos que la página tiene instalado un certificado válido. El motivo de no forzar el protocolo https quizá sea por incompatibilidades de la plantilla, ya que hemos leíd que han arreglado problemas relativos a esto\cite{art_11}.
 
 \bigskip
 Miramos el código fuente de la página y vemos que se están enlazando de manera absoluta hacia http los archivos CSS, esto es lo que hace que la página no se vea correctamente al acceder por https ya que el navegador bloquea las conexiones no https por seguridad. Esto es algo que se resolvería de forma bastante sencilla y evitaría el problema de secuestro se sesión.
@@ -520,7 +521,7 @@ Miramos el código fuente de la página y vemos que se están enlazando de maner
 \bigskip
 Una vez lanzado el programa ettercap le pedimos al tutor que se conectara a Prado y a los pocos segundos obtuvimos el resultado que se puede ver en la figura \ref{fig:ettercap}, en unos pocos segundos y aun estando dentro de una red wifi con cifrado WPA2 pudimos realizar el ataque de ARP Spoofing sin ningún problema. Finalmente obtuvimos las variables de sesión \textbf{MOODLEID1\_}, \textbf{SimpleSAMLSessionID-sp} y \textbf{SimpleSAMLAuthToken}, las cuales copiamos en nuestro navegador con un editor de cookies y de inmediato podíamos navegar suplantando la identidad del tutor.
 
-\bigskip 
+\bigskip
 Hay que tener en cuenta que para iniciar sesión se utiliza el IDP del CSIRC, que si funciona a través de https por lo que en ningún momento podríamos capturar la contraseña del usuario como si se podría hacer si la página de login funcionara a través de http.
 
 \bigskip
@@ -557,7 +558,7 @@ Pero vemos como el 13 de marzo de 2017 hubo algún tipo de problema que se tard�
 \end{figure}
 
 \bigskip
-Lo ideal en un servicio con tanto volumen de usuarios y tan crítico es informar a los usuarios de posibles cortes en el servicio. Por ejemplo, SWAD suele avisar con una notificación a todos los usuarios de futuros cortes del servicio (ver imagen \ref{fig:paroprogramadoswad}), ya que aunque el servicio se suspenda de madrugada al tener tantos usuarios siempre puede afectar a una gran parte de ellos. 
+Lo ideal en un servicio con tanto volumen de usuarios y tan crítico es informar a los usuarios de posibles cortes en el servicio. Por ejemplo, SWAD suele avisar con una notificación a todos los usuarios de futuros cortes del servicio (ver imagen \ref{fig:paroprogramadoswad}), ya que aunque el servicio se suspenda de madrugada al tener tantos usuarios siempre puede afectar a una gran parte de ellos.
 
 \begin{figure}[H]
 \centering
@@ -567,7 +568,7 @@ Lo ideal en un servicio con tanto volumen de usuarios y tan crítico es informar
 \end{figure}
 
 \bigskip
-En el caso de no poder prever un problema de de este tipo es recomendable al menos avisar a los usuarios por una vía alternativa como puede ser el correo institucional o las redes sociales. En el caso de la caída de Prado del día 13  de marzo aunque mucha gente alertaba en la red social Twitter de que tenían problemas para acceder a la plataforma no se recibió ninguna respuesta de la UGR hasta el restablecimiento del servicio como podemos ver en la imagen \ref{fig:tweet}. 
+En el caso de no poder prever un problema de de este tipo es recomendable al menos avisar a los usuarios por una vía alternativa como puede ser el correo institucional o las redes sociales. En el caso de la caída de Prado del día 13  de marzo aunque mucha gente alertaba en la red social Twitter de que tenían problemas para acceder a la plataforma no se recibió ninguna respuesta de la UGR hasta el restablecimiento del servicio como podemos ver en la imagen \ref{fig:tweet}.
 
 
 
@@ -579,7 +580,7 @@ En el caso de no poder prever un problema de de este tipo es recomendable al men
 \end{figure}
 
 \bigskip
-Como podemos ver en la imagen \ref{fig:statuscake2} el tiempo de respuesta del servidor es bastante bueno, ya que aunque lo ideal suelen ser 200 milisegundos en cargar la página principal Prado2 suele responder en un rango que va desde los 400 milisegundos, que está muy bien, a los 3 segundos, que se puede considerar dentro de lo aceptable. Quizá reseñar que en caso de alta demanda como puede ser el inicio del curso puede ser interesante contar con sistema de balanceo de carga para evitar los problemas que nos han comentado algunos usuarios que se han encontrado a la hora de registrarse en un grupo de prácticas, ya que al haber tanta gente conectada al mismo tiempo el sistema se ha visto colapsado. 
+Como podemos ver en la imagen \ref{fig:statuscake2} el tiempo de respuesta del servidor es bastante bueno, ya que aunque lo ideal suelen ser 200 milisegundos en cargar la página principal Prado2 suele responder en un rango que va desde los 400 milisegundos, que está muy bien, a los 3 segundos, que se puede considerar dentro de lo aceptable. Quizá reseñar que en caso de alta demanda como puede ser el inicio del curso puede ser interesante contar con sistema de balanceo de carga para evitar los problemas que nos han comentado algunos usuarios que se han encontrado a la hora de registrarse en un grupo de prácticas, ya que al haber tanta gente conectada al mismo tiempo el sistema se ha visto colapsado.
 
 
 
@@ -621,13 +622,13 @@ Se creó el subdominio \url{http://prado.ernesto.es} en mi servidor personal y s
 
 \section{Realización de script GreaseMonkey}
 
-Cuando comenzamos el proyecto pensamos en el desarrollo de una herramienta que corrigiera algunas de las carencias mas importantes de la plataforma. 
+Cuando comenzamos el proyecto pensamos en el desarrollo de una herramienta que corrigiera algunas de las carencias mas importantes de la plataforma.
 
 \bigskip
 Como ya habíamos comprobado previamente la página no se mostraba correctamente por https porque habían rutas absolutas a elementos http y el navegador las bloqueaba por considerarlas inseguras pero si cambiábamos las urls de esos elementos la página se visualizaba correctamente.
 
 \bigskip
-Para ello escribimos un código que buscaba todas las urls que comenzaran por http y las reemplazaba por https haciendo uso de expresiones regulares. Este código funcionaba correctamente pero al hacer los cambios una vez cargada daba una sensación extraña y mucha sensación de lentitud. Aparte de esto hicimos varias pruebas y vimos que aunque la página se recargara sobre https el servidor de identificación de sesión del a ugr (\url{https://idp.ugr.es/simplesaml/module.php/core/loginuserpass.php} devolvía los valores a una página http, por lo que siempre se podían capturar los valores devueltos aunque el resto de la sesión fuera sobre un canal seguro. 
+Para ello escribimos un código que buscaba todas las urls que comenzaran por http y las reemplazaba por https haciendo uso de expresiones regulares. Este código funcionaba correctamente pero al hacer los cambios una vez cargada daba una sensación extraña y mucha sensación de lentitud. Aparte de esto hicimos varias pruebas y vimos que aunque la página se recargara sobre https el servidor de identificación de sesión del a ugr (\url{https://idp.ugr.es/simplesaml/module.php/core/loginuserpass.php} devolvía los valores a una página http, por lo que siempre se podían capturar los valores devueltos aunque el resto de la sesión fuera sobre un canal seguro.
 
 \bigskip
 Además, pudimos comprobar que haciendo unos cambios mínimos en nuestro clon propio de la plataforma esta se devolvía siempre de forma correcta por https sin tener que recurrir a parches externos y siendo una mejor solución.
@@ -638,19 +639,19 @@ Por hacer una ultima prueba quisimos probar si sería posible hacer cambios est�
 
 \section{Herramienta hardware para robo de sesiones}
 
-Para desarrollar la herramienta utilizamos un viejo router Huawei HG556a de Vodafone al que le instalamos el firmware libre OpenWRT \cite{openwrt}. 
+Para desarrollar la herramienta utilizamos un viejo router Huawei HG556a de Vodafone al que le instalamos el firmware libre OpenWRT \cite{openwrt}.
 
 \bigskip
-Una vez instalado el firmware configuramos dos interfaces inalámbricas virtuales. La primera interfaz se configuró en modo cliente que conectamos a la red \textit{eduroam} haciendo uso de los certificados pertinentes y mi cuenta personal de usuario de la UGR. La segunda interfaz se configuró en modo punto de acceso, creando una red wifi sin contraseña de nombre \textit{eduroam\_pruebas} y agregamos las reglas necesarias a iptables para que redirigiera el trafico de una interfaz a otra por lo que los clientes que se conectaban a la red wifi \textit{eduroam\_pruebas} realmente estaban saliendo a internet por la red \textit{eduroam} pero con la salvedad de que podíamos espiar el tráfico que pasaba por la red. A este tipo de dispositivos de les denomina \textit{honeypot} (tarro de miel). 
+Una vez instalado el firmware configuramos dos interfaces inalámbricas virtuales. La primera interfaz se configuró en modo cliente que conectamos a la red \textit{eduroam} haciendo uso de los certificados pertinentes y mi cuenta personal de usuario de la UGR. La segunda interfaz se configuró en modo punto de acceso, creando una red wifi sin contraseña de nombre \textit{eduroam\_pruebas} y agregamos las reglas necesarias a iptables para que redirigiera el trafico de una interfaz a otra por lo que los clientes que se conectaban a la red wifi \textit{eduroam\_pruebas} realmente estaban saliendo a internet por la red \textit{eduroam} pero con la salvedad de que podíamos espiar el tráfico que pasaba por la red. A este tipo de dispositivos de les denomina \textit{honeypot} (tarro de miel).
 
 \bigskip
-Instalamos el programa \textit{ettercap} que utilizamos durante la auditoría de seguridad y lo configuramos para empezar a capturar información. A los pocos minutos de empezar a capturar nos dimos cuenta que el limitado espacio del dispositivo iba a ser un problema, pues el HG556a cuenta con sólo 16MB de ROM y 64MB de RAM a todas luces insuficiente para una captura de este tipo así que conectamos una unidad USB de 16GB, la montamos como lectura/escritura y solucionamos el problema del espacio. 
+Instalamos el programa \textit{ettercap} que utilizamos durante la auditoría de seguridad y lo configuramos para empezar a capturar información. A los pocos minutos de empezar a capturar nos dimos cuenta que el limitado espacio del dispositivo iba a ser un problema, pues el HG556a cuenta con sólo 16MB de ROM y 64MB de RAM a todas luces insuficiente para una captura de este tipo así que conectamos una unidad USB de 16GB, la montamos como lectura/escritura y solucionamos el problema del espacio.
 
 \bigskip
-Una vez vimos que el sistema funcionaba probando a secuestrar nuestras sesiones fuimos a la sala de libre acceso que hay al lado de la biblioteca de la ETSIIT en la que habían unos 15 estudiantes, conectamos el aparato, lo disimulamos entre unas mochilas y volvimos a comprobar que todo funcionaba correctamente y podíamos capturar nuestras variables de sesión si nos conectábamos a prado a través de esta red. 
+Una vez vimos que el sistema funcionaba probando a secuestrar nuestras sesiones fuimos a la sala de libre acceso que hay al lado de la biblioteca de la ETSIIT en la que habían unos 15 estudiantes, conectamos el aparato, lo disimulamos entre unas mochilas y volvimos a comprobar que todo funcionaba correctamente y podíamos capturar nuestras variables de sesión si nos conectábamos a prado a través de esta red.
 
 \bigskip
-Hicimos un poco de ingeniería social comentando en voz alta que estaban probando una nueva red wifi que se llamaba \textit{eduroam\_pruebas} que iba mucho más rápida y nos pusimos a esperar. En dos horas que estuvimos en la sala contabilizamos un total de 37 clientes conectados al router, de los cuales 18 se conectaron a prado y de todos ellos pudimos capturar sus variables de sesión. 
+Hicimos un poco de ingeniería social comentando en voz alta que estaban probando una nueva red wifi que se llamaba \textit{eduroam\_pruebas} que iba mucho más rápida y nos pusimos a esperar. En dos horas que estuvimos en la sala contabilizamos un total de 37 clientes conectados al router, de los cuales 18 se conectaron a prado y de todos ellos pudimos capturar sus variables de sesión.
 
 \bigskip
 Evidentemente aunque vimos los valores de las variables de sesión en ningún momento hicimos uso de ellas para suplantar la identidad de nadie, ya que no contábamos con la autorización debida, todo fue un ejercicio confirmar nuestras sospechas de que era realmente fácil realizar un ataque a la plataforma.

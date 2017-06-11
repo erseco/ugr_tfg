@@ -197,8 +197,7 @@ Tras una reunión en el CEVUG con los responsables de Prado2 mantenida el 23 de 
 
 Una vez definida la consulta se realizó al CSIRC una petición formal de datos. Tras varios intentos infructuosos de realizar la petición de forma telemática por parte del tutor se optó por realizarla de forma presencial en papel.
 
-El día 23 de Mayo nos remitieron desde el CEVUG una muestra de los datos de 2014 para ver si los datos eran correctos antes de darnos en fases los datos completos. La primera fase correspondiente a los datos de 2015 los tuvimos disponibles el 1 de Junio en un fichero CSV\footnote{Los archivos CSV (del inglés comma-separated values) son un tipo de documento para representar datos en forma de tabla en las que las columnas se separan por comas.} de 500 megabytes conteniendo más de 3 millones de registros. El 7 de junio de 2017 recibimos los datos de 2015 en un fichero de 3,79 gigabytes conteniendo más de 20 millones de registros.
-
+El día 23 de Mayo nos remitieron desde el CEVUG una muestra de los datos para ver si los datos eran correctos antes de darnos en fases los datos completos. La primera fase correspondiente a los datos de 2015 los tuvimos disponibles el 1 de Junio en un fichero CSV\footnote{Los archivos CSV (del inglés comma-separated values) son un tipo de documento para representar datos en forma de tabla en las que las columnas se separan por comas.} de 500 megabytes conteniendo más de 3 millones de registros. El 7 de junio de 2017 recibimos los datos de 2015 en un fichero de 3,79 gigabytes conteniendo más de 20 millones de registros.
 
 \begin{lstlisting}
 SQL> select  /*csv*/ l.id,l.time,rawtohex(sys.DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT_STRING => l.userid)) userid_md5,rawtohex(sys.DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT_STRING => l.ip)) ip_md5 ,l.course, substr(c.idnumber,0,14) course_code,substr(c.idnumber,0,3) tit, substr(c.idnumber,5,2) plan, substr(c.idnumber,8,2) cea, l.module,l.cmid, l.action, l.url, l.info from p_log l, p_course c where (l.course=c.id and l.userid>10 and REGEXP_LIKE(c.idnumber, '^[0-9]') and  l.time>1420070400 and l.time<1451606400);
@@ -208,7 +207,6 @@ SQL> select  /*csv*/ l.id,l.time,rawtohex(sys.DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT
 Con los datos recogidos y basándonos en el excelente articulo\cite{art_02} de James Ballard, que aunque se centra en en el análisis de la nueva tabla de log de las versiones 2.7 y superiores, escribimos una serie de consultas en lenguaje R que procesara los datos para sacar conclusiones de los mismo. Dichas consultas se adjuntan en el anexo.
 
 \section{Análisis de usabilidad de la plataforma}
-
 
 Para el análisis de usabilidad hicimos uso de las directrices del experto en usabilidad Jakob Nielsen \cite{jakonielsen} conocidas como 'Heurísticas de Nielsen' para crear sistemas que sean amigables para el usuario:
 
