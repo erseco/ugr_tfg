@@ -185,7 +185,7 @@ Como la tabla contenía información personal como puede ser el identificador de
 
 \begin{figure}\centering\includegraphics[width=0.8\textwidth]{../images/logtable}\caption{Tabla de log}\label{logtable}\end{figure}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=sql]
 SELECT
     id, time, MD5(userid), MD5(ip), MD5(course), module, cmid, action, url, info
 FROM
@@ -199,7 +199,7 @@ Una vez definida la consulta se realizó al CSIRC una petición formal de datos.
 
 El día 23 de Mayo nos remitieron desde el CEVUG una muestra de los datos para ver si los datos eran correctos antes de darnos en fases los datos completos. La primera fase correspondiente a los datos de 2015 los tuvimos disponibles el 1 de Junio en un fichero CSV\footnote{Los archivos CSV (del inglés comma-separated values) son un tipo de documento para representar datos en forma de tabla en las que las columnas se separan por comas.} de 500 megabytes conteniendo más de 3 millones de registros. El 7 de junio de 2017 recibimos los datos de 2015 en un fichero de 3,79 gigabytes conteniendo más de 20 millones de registros.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=sql]
 SQL> select  /*csv*/ l.id,l.time,rawtohex(sys.DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT_STRING => l.userid)) userid_md5,rawtohex(sys.DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT_STRING => l.ip)) ip_md5 ,l.course, substr(c.idnumber,0,14) course_code,substr(c.idnumber,0,3) tit, substr(c.idnumber,5,2) plan, substr(c.idnumber,8,2) cea, l.module,l.cmid, l.action, l.url, l.info from p_log l, p_course c where (l.course=c.id and l.userid>10 and REGEXP_LIKE(c.idnumber, '^[0-9]') and  l.time>1420070400 and l.time<1451606400);
 
 \end{lstlisting}

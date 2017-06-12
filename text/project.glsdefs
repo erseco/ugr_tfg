@@ -1,0 +1,60 @@
+\ifglsentryexists{Usabilidad}{}%
+{%
+\gls@defglossaryentry{Usabilidad}%
+{%
+name={Usabilidad},%
+sort={Usabilidad},%
+type={main},%
+first={Usabilidad},%
+firstplural={Usabilidads},%
+text={Usabilidad},%
+plural={Usabilidads},%
+description={facilidad con que las personas pueden utilizar una herramienta particular o cualquier otro objeto fabricado por humanos con el fin de alcanzar un objetivo concreto. La usabilidad es un término que no forma parte del diccionario de la Real Academia Española (RAE), aunque es bastante habitual en el ámbito de la informática y la tecnología.},%
+descriptionplural={facilidad con que las personas pueden utilizar una herramienta particular o cualquier otro objeto fabricado por humanos con el fin de alcanzar un objetivo concreto. La usabilidad es un término que no forma parte del diccionario de la Real Academia Española (RAE), aunque es bastante habitual en el ámbito de la informática y la tecnología.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gcd}{}%
+{%
+\gls@defglossaryentry{gcd}%
+{%
+name={GCD},%
+sort={GCD},%
+type={acronym},%
+first={Greatest Common Divisor\glsspace (GCD)},%
+firstplural={Greatest Common Divisors\glsspace (GCDs)},%
+text={GCD},%
+plural={GCDs},%
+description={Greatest Common Divisor},%
+descriptionplural={Greatest Common Divisor\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Greatest Common Divisor},%
+longplural={Greatest Common Divisors},%
+short={GCD},%
+shortplural={GCDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
