@@ -250,7 +250,7 @@ Para analizar la seguridad de la plataforma se realizó una auditoría para ver 
 Prado no tiene activado por defecto el protocolo https aunque si tengan un certificado SSL instalado, por lo que la página podía ser vulnerable a secuestros de sesión \textit{(session hijacking)}. Para comprobar si esto era posible y haciendo uso de la herramienta \textbf{ettercap} lanzamos un ataque de ARP Spoofing\cite{art_08} que hiciera que todas las peticiones http que pasaran por la red pasaran por nuestra máquina que estaría capturando los datos, los ataques de este tipo son bien conocidos desde 1997\cite{art_07} por lo que los propios desarrolladores de moodle recomiendan habilitar por defecto el protocolo https\cite{art_10}.
 
 \bigskip
-Para ejecutar dicho ataque solo tuvimos que llamar a ettercap con una serie de parámetros:
+Para ejecutar dicho ataque solo tuvimos que llamar a \texttt{ettercap} con una serie de parámetros:
 
 \begin{lstlisting}
 sudo ettercap -T -i en0 -P autoadd -M arp ///80 -e "^GET /moodle/ HTTP/1.[01].*MOODLEID1_=" -t tcp
@@ -269,7 +269,7 @@ Para el análisis de  disponibilidad de la plataforma se optó por monitorizar l
 Dicha herramienta va lanzando continuamente peticiones de conexión a la página desde diferentes centros de datos a lo largo del mundo y va registrando el tiempo que tarda en responder y el tipo de respuesta para saber si la página está operativa o caída.
 
 \bigskip
-Una de las cosas interesantes de esta herramienta es que se pueden configurar varios tipos de avisos por lo que si la plataforma sufría una interrupción del servicio nos lo notificaba por e-mail, así como nos notificaba cuando volvía a estar operativo.
+Una de las cosas interesantes de esta herramienta es que se pueden configurar varios tipos de avisos por lo que si la plataforma sufría una interrupción del servicio nos lo notificaba por e-mail, avisando también cuando volvía a estar operativo.
 
 
 
@@ -288,7 +288,7 @@ Para comprobar si sería posible solucionar parcialmente los problemas de seguri
 
 \section{Herramienta hardware para robo de sesiones}
 
-A modo de ejercicio práctico para ver el alcance de la seguridad de la plataforma se propuso crear un dispositivo hardware para cazar credenciales de usuarios a modo de honeypot utilizando un viejo router instalando el firmware OpenWRT \cite{openwrt} e instalando las herramientas necesarias para obtener los identificadores de sesión de los clientes conectados.
+A modo de ejercicio práctico para ver el alcance de la seguridad de la plataforma se propuso crear un dispositivo hardware para cazar credenciales de usuarios a modo de \texttt{honeypot} utilizando un viejo router instalando el firmware \texttt{OpenWRT} \cite{openwrt} e instalando las herramientas necesarias para obtener los identificadores de sesión de los clientes conectados.
 
 
 

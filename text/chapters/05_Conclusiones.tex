@@ -1,28 +1,24 @@
 \chapter{Conclusiones y recomendaciones}
 
-Después de realizar este informe la principal conclusión a la que se puede llegar es que si bien moodle es una base idónea para desarrollar el sistema de gestión de la docencia online de la Universidad de Granada pensamos que se deberían realizar una serie de cambios y ajustes para adecuarlo a las necesidades propias de la Universidad.
+Después de realizar este informe la principal conclusión a la que se puede llegar es que si bien moodle podría ser una base idónea para desarrollar el sistema de gestión de la docencia online de la Universidad de Granada pensamos que se deberían realizar una serie de cambios y ajustes para adecuarlo a las necesidades propias de la Universidad.
 
 \bigskip
-Quiero hacer hincapié en el gran esfuerzo realizado por los profesionales del CEVUG y no quiero que este análisis se entienda como una crítica hacia su excelente trabajo. Con mi experiencia como desarrollador web puedo afirmar que no es fácil tener en cuenta los miles de detalles requeridos para personalizar, adaptar y optimizar una plataforma y mas cuando se trabaja a contrarreloj solucionando problemas lo que en muchos casos no permite mas que hacer un ajuste "temporal" que perdura en el tiempo indefinidamente. Por ello este informe, aunque dirigido a ellos como ayuda para optimizar la plataforma quizá debería servirles para hacer ver a sus superiores que algo tan importante como la plataforma web de apoyo a la docencia debería tener mas medios.
+Quiero hacer hincapié en el gran esfuerzo realizado por los profesionales del CEVUG y no quiero que este análisis se entienda como una crítica hacia su excelente trabajo. Con mi experiencia como desarrollador web puedo afirmar que no es fácil tener en cuenta los miles de detalles requeridos para personalizar, adaptar y optimizar una plataforma y mas cuando se trabaja a contrarreloj solucionando problemas lo que en muchos casos no permite mas que hacer un ajuste ``temporal'' que perdura en el tiempo indefinidamente. Por ello este informe, aunque dirigido a ellos como ayuda para optimizar la plataforma quizá debería servirles para hacer ver a sus superiores que algo tan importante como la plataforma web de apoyo a la docencia debería tener mas medios.
 
 \bigskip
 Sólo como nota, para gestionar su cuenta de twitter la policía nacional de España cuenta con un equipo de 8 personas a tiempo completo. Prado, que evidentemente es mas complejo y requiere muchísimo más trabajo actualmente no cuenta con ningún desarrollador y las tres personas a cargo solo realizan tareas de administración de la plataforma.
 
 \bigskip
-
 La filosofía del software libre no se limita a distribuir software de forma gratuita, la idea es que al estar disponible el código fuente la gente pueda participar en el proyecto realizando modificaciones y mejoras. Si por el contrario nos limitamos a hacer uso del software sin aportar nada a la comunidad de desarrolladores estamos haciendo un flaco favor y además al venir esto de una institución donde se imparte conocimiento el efecto es aun mayor. Por lo pronto se debería mostrar de forma claro tanto que se está usando moodle como un enlace a su sitio original así como su licencia, cosa a la que de hecho obliga la licencia GPLv3 bajo la que está liberado moodle.
 
 \bigskip
-También hay que tener en cuenta que ante cualquier cambio los usuarios siempre oponen resistencia sea el cambio para mejor o para peor Esto siempre hay que tenerlo en cuenta a la hora de interpretar las críticas hacia el sistema.
-
-\bigskip
-Es evidente que en el estado actual y con los recursos existentes no se puede competir con otras plataformas con muchos años a sus espaldas como puede ser SWAD, por eso quizá no sea mala idea en lugar de intentar acercarse a lo ya existente plantearse otro objetivo como puede ser la simplicidad. Como ya hemos visto la mayor parte de los usuarios necesitan un pequeño porcentaje de funciones. ¿Por qué no ocultar el resto? Imaginemos Prado como una plataforma basada en cuatro pilares fundamentales: Documentos, Tareas, Calificaciones y Mensajería. Si ocultamos el resto de opciones tenemos un sistema bastante más simple que el actual y seguramente sería suficiente para el 95\% de los usuarios.
+Es evidente que en el estado actual y con los recursos existentes no se puede competir con otras plataformas con muchos años a sus espaldas como puede ser SWAD, por eso quizá no sea mala idea que, en lugar de intentar acercarse a lo ya existente, se planteara otro objetivo como puede ser la simplicidad. Como ya hemos visto la mayor parte de los usuarios necesitan un pequeño porcentaje de funciones. ¿Por qué no ocultar el resto? Imaginemos Prado como una plataforma basada en cinco pilares fundamentales: Documentos, Tareas, Cuestionarios, Calificaciones y Mensajería. Si ocultamos el resto de opciones tendríamos un sistema bastante más simple que el actual y seguramente sería suficiente para el 95\% de los usuarios.
 
 \bigskip
 Una vez realizada esta simplificación ya se podrían empezar a agregar funciones en base a su necesidad, pero sin olvidarnos de la máxima de la plataforma, que sería la simpleza. 
 
 \bigskip
-Javier Krahe decía en una canción: \textit{'...en Villatripas de Abajo se suple con desparpajo por parte del vecindario la falta de monetario...'}. Y partiendo de esa idea se podría resolver la falta de recursos del CEVUG creando en la ETSIIT una asignatura sobre programación de plataformas tipo moodle y que los propios alumnos fueran mejorando la plataforma. 
+Decía Javier Krahe en una canción: \textit{'...en Villatripas de Abajo se suple con desparpajo por parte del vecindario la falta de monetario...'}. Y partiendo de esa idea se podría resolver la falta de recursos del CEVUG creando en la ETSIIT una asignatura sobre programación de plataformas tipo moodle y que los propios alumnos fueran mejorando la plataforma. 
 
 \newpage
 En cuanto a futuras mejoras de la plataforma Prado2 vamos a clasificarlas las mejoras sugeridas en carácter urgente, recomendado y opcional:
@@ -34,7 +30,7 @@ En cuanto a futuras mejoras de la plataforma Prado2 vamos a clasificarlas las me
 
 	\item Actualizar la versión de moodle, ya que en un entorno web en constante evolución no es admisible quedarse en versiones anticuadas que a la larga pueden acarrear serios problemas de seguridad y compatibilidad.
 
-	\item Dejar todos los menús laterales visibles, ya que la implementación actual del template no respeta los anteriormente abiertos y crea mucha confusión al usuario al no saber donde se está
+	\item Dejar todos los menús laterales visibles, ya que la implementación actual del template no respeta los anteriormente abiertos y crea mucha confusión al usuario al perder la orientación espacial de donde se encuentra.
 \begin{lstlisting}
 # regla css para mostrar desplegados todos los paneles
 .block {
@@ -42,8 +38,8 @@ En cuanto a futuras mejoras de la plataforma Prado2 vamos a clasificarlas las me
 }
 \end{lstlisting}
 
-	\item Ocultar las vistas no necesarias como "Todos los cursos".
-	\item Ocultar para los alumnos el menú lateral derecho de "Problemas"
+	\item Ocultar las vistas no necesarias como ``Todos los cursos''.
+	\item Ocultar para los alumnos el menú lateral derecho de ``Problemas''
 	\item Mostrar el mensaje de información a la hora de editar un curso para saber que se pueden arrastrar ficheros directamente.
 	\item Ocultar la barra superior de idioma y poner en su lugar un enlace en el pie de la página.
 	\item Ocultar el menú superior o poner unas opciones mas útiles.
@@ -110,6 +106,9 @@ Redirect 301  /index.html https://prado.ugr.es/moodle/index.php
 
 En la figura \ref{fig:temporizacion2} podemos ver un diagrama con los tiempos empleados para el desarrollo de este proyecto. 
 
+\bigskip
+La temporización final difiere de la que planificados debido a diversas causas, como por ejemplo el tiempo que tardamos en recibir los datos de Prado por parte del CEVUG, lo que conllevó que no se pudieran realizar más análisis de tipo estadístico sobre el uso de la plataforma.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{../screenshots/temporizacion2}
@@ -134,8 +133,23 @@ Los hitos más importantes en el desarrollo de este proyecto han sido los siguie
     
     \item Abril 2017. Se comienza a redactar la memoria.
 
-    \item Mayo 2017. El CEVUG nos proporciona los logs de Prado.
+    \item Mayo 2017. El CEVUG nos proporciona los ``logs'' de Prado.
     
     \item Junio 2017. Defensa final del proyecto
 
 \end{itemize}
+
+\section{Conclusiones sobre el proyecto}
+
+La elaboración de este informe me ha supuesto un gran esfuerzo al tener que utilizar múltiples disciplinas para poder obtener la información. He tenido que aplicar conocimientos de seguridad, de programación, de análisis estadístico, de configuración de sistemas e incluso conocimientos en materia de hardware. Todo ello en su conjunto es lo que me ha permitido hacer un análisis tan exhaustivo de la plataforma.
+
+\bigskip
+También ha supuesto un esfuerzo bastante grande el difundir la encuesta, realizar las entrevistas y conseguir obtener los datos de la plataforma, parte de la que tengo que agradecer el esfuerzo y perseverancia del tutor, pues si no hubiera sido imposible conseguirlos.
+
+\bigskip
+El desarrollar la memoria proyecto en LaTeX ha sido muy satisfactorio a nivel personal, pues era una tecnología que conocía desde hace tiempo pero que nunca había llegado a usar.
+
+\bigskip
+Y para terminar, me gustaría que todo el esfuerzo y tiempo invertido en este informe sirva a sus administradores a mejorar Prado y no quedara olvidado en cualquiera cajón.
+
+

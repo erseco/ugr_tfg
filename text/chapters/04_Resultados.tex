@@ -87,15 +87,19 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item No se notifican la convocatorias de exámenes.
 
-\item El sistema de mensajería es complicado de encontrar y mucho más complicado de usar. En primer lugar, el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos. Además, en lugar de aparecer un botón que ponga  ``Enviar mensaje'', aparece un desplegable cuya única opción es ``Enviar mensaje'' (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al seleccionar esa opción pasamos a una ventana donde podemos redactar el mensaje, aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje, el profesor no recibe una copia pese a haberse marcado, con lo que no puede comprobar que efectivamente se está enviado el mensaje a todos los alumnos. El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado. Por último, y no menos importante, no permite editar el asunto del mensaje. Si además sucede algún problema al enviar mensajes a los alumnos, nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que dice  ``Algo ha ido mal al enviar mensajes a los usuarios seleccionados. Algunos pueden haber recibido el mensaje''.
-
+\item El sistema de mensajería es complicado de encontrar y mucho más complicado de usar. En primer lugar, el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos. Además, en lugar de aparecer un botón que ponga  ``Enviar mensaje'', aparece un desplegable cuya única opción es ``Enviar mensaje'' (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al seleccionar esa opción pasamos a una ventana donde podemos redactar el mensaje, aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje, el profesor no recibe una copia pese a haberse marcado, con lo que no se puede comprobar que efectivamente se está enviado el mensaje a todos los alumnos. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{../screenshots/pantallazoPradoenviarMensaje}
 \caption{Vista principal del clon de Prado}
 \label{fig:pantallazoPradoenviarMensaje}
-\end{figure}
+\end{figure} 
+
+\item El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado. Por último, y no menos importante, no permite editar el asunto del mensaje. 
+
+\item Si además sucede algún problema al enviar mensajes a los alumnos, nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que dice  ``Algo ha ido mal al enviar mensajes a los usuarios seleccionados. Algunos pueden haber recibido el mensaje''.
+
 
 \begin{figure}[h!]
 \centering
@@ -117,7 +121,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item Aunque se configuren agrupamientos de alumnos, los mismos luego no se pueden utilizar para nada. De hecho, no sirven ni para hacer un listado de alumnos por grupo.
 
-\item No se entiende la utilidad del foro privado, quizá esa opción no debería estar. Igual sucede con las insignias.
+\item No se entiende la utilidad del foro privado y el de novedades, quizá esas opciones no debería estar. Igual sucede con las insignias.
 
 \item El árbol de navegación lateral es confuso y la estructura de bloques no es consistente. Además, en cada cambio de página se vuelve a mostrar la vista por defecto. Se puede hacer la prueba mostrando el bloque ``Calendario'' de la parte derecha y haciendo click en cambiar de mes, vemos que se recarga la pagina ocultando de nuevo el bloque ``Calendario''. Al entrar en la página aparecen a la izquierda cuatro bloques diferenciados: ``Enlaces'', ``Menú Principal'', ``Navegación'' y ``Administración'' pero, al entrar en cualquier opción, los dos primeros desaparecen.
 
@@ -125,23 +129,15 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item Aunque se oculten los bloques laterales con las flechas que hay para tal cometido, al recargar la página esos bloques vuelven a aparecer.
 
-\item Si hago colapsar las columnas de navegación laterales (flechas izquierda y derecha), en cuanto hago click en otro enlace vuelven a aparecer. Esto obliga a estar colapsándolas todo el rato.
+\item Si se ocultan las columnas de navegación laterales (flechas izquierda y derecha), al hacer click en otro enlace vuelven a aparecer. Esto obliga a estar ocultándolas todo el rato.
 
-%\item Las herramientas de grupos/agrupamientos me han dado algo de trabajo. Creo que ya lo controlo, pero me da la sensación de que podrían ser más fáciles.
-
-\item Al enviar un mensaje a un estudiante a través de \textit{Moodle}, no se puede poner un ``Asunto''. %Imagino que simplemente le sale en 'Asunto' el nombre de la asignatura, pero me gustaría poder poner algo más específico.
+\item Al enviar un mensaje a un estudiante a través de \textit{Moodle}, no se puede introducir el ``Asunto'', y ni tan siquiera podemos saber con que ``Asunto'' se enviará el e-mail. 
 
 \item Aunque \textit{Moodle} preserve el anonimato en las respuestas de los cuestionarios, no preserva dicho anonimato en el ``registro de actividad''. Es decir, se puede saber quién ha respondido a la encuesta e incluso, si uno está pendiente de cada actualización del registro, saber quién es el autor de cada respuesta. Si una actividad se etiqueta como anónima, el acceso a la misma debería desaparecer del registro de actividad.
 
-%\item Todos los cursos pongo un cuestionario de valoración de la asignatura que los estudiantes pueden responder anónimamente. Moodle preserva el anonimato en las respuestas, pero no en el 'registro de actividad'. Es decir, se puede saber quiénes respondieron al cuestionario e incluso, si uno estuviera muy pendiente de cada actualización de respuestas, quién es responsable de cada respuesta. Creo que cuando una actividad se etiqueta como anónima, el acceso a la misma debería desaparecer del registro de actividad.
-
 \item Al poner una fecha de inicio y fin de una actividad, debería aparecer por defecto el año en que estamos. Un usuario nos contó que en una ocasión, la actividad se daba por cerrada un año antes.
 
-%\item No sé de quién depende esto pero, por favor, que aparezcan en moodle todos los estudiantes matriculados en la asignatura, y sólo ellos.
-
 \item Hemos notado también un malestar general con los estudiantes que inscritos automáticamente en las asignaturas. En algunos casos, se inscriben estudiantes que no están matriculados y en otros, alumnos matriculados no aparecen inscritos en sus asignaturas.
-
-%\item Es una locura el tema de la matrícula de los estudiantes; me han escrito estudiantes para decirme que a pesar de estar en otro curso y no haberse matriculado nunca en mi asignatura, aparecen y, por tanto, les llegan los mensajes y tienen acceso a la plataforma. Por el contrario, hay muchos estudiantes que tengo que matricular manualmente porque, a pesar de estar en mi grupo, no aparecen!!!
 
 \item El problema de la adjudicación de grupos de alumnos en el master de educación. Aparecen los alumnos de todas las especialidades en la misma asignatura y todos los profesores pueden subir o borrar recursos de la plataforma, aunque no sean profesores de ese grupo en concreto.
 
@@ -166,7 +162,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \section{Encuesta a los usuarios}
 
-Durante el tiempo que estuvo operativa la encuesta recibimos un total de 617 respuestas, como se puede apreciar en el gráfico la mayor parte de las respuestas se obtuvieron tras las peticiones de participación via e-mail.
+Durante el tiempo que estuvo operativa la encuesta recibimos un total de 617 respuestas, como se puede apreciar en el gráfico la mayor parte de las respuestas se obtuvieron tras las peticiones de participación vía e-mail.
 
     \includegraphics[width=0.8\textwidth]{../charts/00_fecha}
 
@@ -206,7 +202,7 @@ Casi todos los usuarios coinciden en que es vital el acceso desde dispositivos m
 
 Los usuarios también creen necesario un sistema de mensajería interna para la comunicación entre profesores y alumnos.
 
-En cambio, las opciones de Insignias, Blogs y Estadísticas no parecen ser vitales y de hecho mucha gente nos ha preguntado que utilidad tienen las Insginias pues no saben para que sirven.
+En cambio, las opciones de Insignias, Blogs y Estadísticas no parecen ser vitales y de hecho mucha gente nos ha preguntado que utilidad tienen las Insignias pues no saben para que sirven.
 
 \includegraphics[width=0.8\textwidth]{../charts/04_califique}
 
@@ -241,9 +237,9 @@ A la hora de calificar prado han la mayoría de los usuarios han otorgado aproba
 \includegraphics[width=0.8\textwidth]{../charts/06_calificaria}
 
 
-  \item \textbf{¿Con cúales de las siguientes plataformas de la UGR ha trabajado?}
+  \item \textbf{¿Con cuales de las siguientes plataformas de la UGR ha trabajado?}
 
-Aquí hay tres ganadores claves, y son evidentemente las plataformas que mas se han usado en todo el ámbito UGR como pueden ser el Tablon de Docencia, SWAD y el propio Prado2, luego encontramos plataformas usadas solo en la ETSIIT como pueden ser Tutor y DECSAI y algunos otros como el antiguo moodle del CEVUG y Ágora que es otra instalación de moodle utilizada en la facultad de Psicología.
+Aquí hay tres ganadores claves, y son evidentemente las plataformas que mas se han usado en todo el ámbito UGR como pueden ser el Tablón de Docencia, SWAD y el propio Prado2, luego encontramos plataformas usadas solo en la ETSIIT como pueden ser Tutor y DECSAI y algunos otros como el antiguo moodle del CEVUG y Ágora que es otra instalación de moodle utilizada en la facultad de Psicología.
 
 \includegraphics[width=0.8\textwidth]{../charts/07_plataformastrabajado}
 
@@ -292,7 +288,7 @@ Módulos             & 32            			& 32					\\ \hline
 \end{table}
 
 
-En las figuras de la \ref{fig:actividadtotal} a la \ref{fig:frecuenciausuarios} podemos ver como el grueso de la actividad se lo llevan unos pocos usuarios, es decir, la inmensa mayoría interactúa muy poco con la plataforma. Presuponemos que este grueso de actividad pertenece tanto a los administradores como a un reducido círculo de profesores, hay que tener en cuenta que los logs registran cada click en alguna sección de Prado.
+En las figuras de la \ref{fig:actividadtotal} a la \ref{fig:frecuenciausuarios} podemos ver como el grueso de la actividad se lo llevan unos pocos usuarios, es decir, la inmensa mayoría interactúa muy poco con la plataforma. Presuponemos que este grueso de actividad pertenece tanto a los administradores como a un reducido círculo de profesores, hay que tener en cuenta que los logs registran cada click en alguna sección de Prado con lo que si por ejemplo se está creando un cuestionario se generará un registro por cada interacción con la página, que es muy superior a la interacción a la hora de subir un fichero.
 
 \begin{figure}[H]
 \centering
@@ -409,13 +405,13 @@ En nuestro análisis hemos encontrado los siguientes problemas:
 
 \item Aparece la información para iniciar sesión en la cabecera y en el pié de la página, esto es redundante, debería aparecer solo en la cabecera.
 \item El selector de idioma ocupa una gran parte de la pantalla siendo un elemento de uso poco común. De hecho como veremos más adelante la traducción al inglés brilla por su ausencia, lo ideal en estos casos es colocar los enlaces para cambiar el idioma en el pié de página. Hay que tener en cuenta que la plataforma detecta el idioma del navegador para seleccionar Español o Inglés. Además debería poner 'Castellano' en lugar de 'Español - Internacional'.
-\item El título 'PLATAFORMA DE RECURSOS DE APOYO A LA DOCENCIA' no debería aparecer como una imagen, ya que además de no estar traducida hace que no todos los dispositivos la muestren bien al ser una imagen demasiado ancha.
+\item El título ``PLATAFORMA DE RECURSOS DE APOYO A LA DOCENCIA'' no debería aparecer como una imagen, ya que además de no estar traducida hace que no todos los dispositivos la muestren bien al ser una imagen demasiado ancha.
 \item La ventana de login muestra una imagen con la ruta https hacia el proveedor de identidad del CSIRC, un poco mas abajo nos encontramos un botón con la misma ruta pero con http. El IDP automáticamente redirige a https, este botón debería ocultarse. El acceso para administradores también debería ocultarse.
-\item Debajo del banner de título aparece un menú con fondo azul en el que siempre aparece la opción 'Entrar' aunque ya hayamos iniciado la sesión en la plataforma.
+\item Debajo del banner de título aparece un menú con fondo azul en el que siempre aparece la opción ``Entrar'' aunque ya hayamos iniciado la sesión en la plataforma.
 \item La opción 'Comunidad' no tiene un uso tan importante como para aparecer ahí, quizá debería estar como un enlace en el pie. Además, podemos acceder al mismo desde el panel lateral.
 \item La opción 'Ayuda' lleva a una página externa del CEVUG para solicitar asistencia, al tener un diseño distinto debería abrirse en una ventana nueva.
 \item Con la sesión iniciada se muestran los cursos del alumno, pero al haber cursos con el mismo nombre hay que ir probando uno a uno con lo cual esta opción tampoco tiene utilidad.
-\item Si se está dentro de un curso también vemos la opción 'Calificaciones', esta opción se puede ver desde el panel lateral y teniendo en cuenta que la mayoría de los profesores no ponen las calificaciones en prado quizá esta opción debería ocultarse.
+\item Si se está dentro de un curso también vemos la opción ``Calificaciones'', esta opción se puede ver desde el panel lateral y teniendo en cuenta que la mayoría de los profesores no ponen las calificaciones en prado quizá esta opción debería ocultarse.
 \item En resumidas cuentas, este menú superior se podría ocultar sin ningún tipo de problema, ganando muchísimo espacio en la pantalla.
 \item El banner central de información acapara toda la atención obligando al usuario a desplazarse para ver la información de los cursos que quiere ver. Dicho banner no muestra información útil con lo que quizá merecería quitarlo o por lo menos darle la opción a los usuarios de ocultarlo.
 \item Aunque se permite ocultar los paneles laterales al recargar la página se vuelven a mostrar, debería memorizarse el estado seleccionado.
@@ -441,7 +437,7 @@ En nuestro análisis hemos encontrado los siguientes problemas:
 
 \section{Análisis de accesibilidad de la plataforma}
 
-Los resultados de los análisis automáticos de accesibilidad de la página principal de Prado (ver figuras \ref{fig:tawdis}, \ref{fig:tenon} y \ref{fig:htmlcodesniffer}) indican que la plataforma tiene algunos puntos que corregir para cumplir con el estándar AA de accesibilidad. No se ha podido analizar de forma automática las páginas internas pues dichas herramientas no pueden acceder a la Plataforma porque hay que autentificarse. El resultado de dicho análisis automático es positivo pues la gran mayoría son pequeños detalles como asignación de etiquetas \texttt{alt}\footnote{Las etiquetas 'alt' se usan en las imágenes como “alternate text”, es decir, un texto que describe la imagen.} en imágenes.
+Los resultados de los análisis automáticos de accesibilidad de la página principal de Prado (ver figuras \ref{fig:tawdis}, \ref{fig:tenon} y \ref{fig:htmlcodesniffer}) indican que la plataforma tiene algunos puntos que corregir para cumplir con el estándar ``AA'' de accesibilidad. No se ha podido analizar de forma automática las páginas internas pues dichas herramientas no pueden acceder a la Plataforma porque hay que autentificarse. El resultado de dicho análisis automático es positivo pues la gran mayoría son pequeños detalles como asignación de etiquetas \texttt{alt}\footnote{Las etiquetas ``alt'' se usan en las imágenes como ``alternate text'', es decir, un texto que describe la imagen.} en imágenes.
 
 \bigskip
 El test TAW nos indica que los colores de la plataforma pueden llegar a generar confusión y que sería adecuado un esquema de colores que permita distinguir de forma mas fácil la información importante así como las secciones principales.
@@ -494,10 +490,10 @@ Si un usuario selecciona el idioma inglés, al ir a la página del IDP del CSIRC
 
 \section{Análisis de seguridad}
 
-Lo primero que nos llama la atención al realizar la auditoría de seguridad es que la página funciona sobre http, probamos a cargar la página con https y vemos que la página tiene instalado un certificado válido. El motivo de no forzar el protocolo https quizá sea por incompatibilidades de la plantilla, ya que hemos leíd que han arreglado problemas relativos a esto\cite{art_11}.
+Lo primero que nos llama la atención al realizar la auditoría de seguridad es que la página funciona sobre http, probamos a cargar la página con https y vemos que la página tiene instalado un certificado válido. El motivo de no forzar el protocolo https quizá sea por incompatibilidades de la plantilla, ya que en la lista de cambios de las versiones más actualizadas de la plantilla especifica que se han arreglado problemas con el https\cite{art_11}.
 
 \bigskip
-Miramos el código fuente de la página y vemos que se están enlazando de manera absoluta hacia http los archivos CSS, esto es lo que hace que la página no se vea correctamente al acceder por https ya que el navegador bloquea las conexiones no https por seguridad. Esto es algo que se resolvería de forma bastante sencilla y evitaría el problema de secuestro se sesión.
+Al ver el código fuente de la página vemos que se están enlazando de manera absoluta hacia http los archivos CSS, esto es lo que hace que la página no se vea correctamente al acceder por https ya que el navegador bloquea las conexiones no https por seguridad. Esto es algo que se resolvería de forma bastante sencilla y evitaría el problema de secuestro se sesión.
 
 \bigskip
 Una vez lanzado el programa ettercap le pedimos al tutor que se conectara a Prado y a los pocos segundos obtuvimos el resultado que se puede ver en la figura \ref{fig:ettercap}, en unos pocos segundos y aun estando dentro de una red wifi con cifrado WPA2 pudimos realizar el ataque de ARP Spoofing sin ningún problema. Finalmente obtuvimos las variables de sesión \textbf{MOODLEID1\_}, \textbf{SimpleSAMLSessionID-sp} y \textbf{SimpleSAMLAuthToken}, las cuales copiamos en nuestro navegador con un editor de cookies y de inmediato podíamos navegar suplantando la identidad del tutor.
@@ -620,7 +616,7 @@ Por hacer una ultima prueba quisimos probar si sería posible hacer cambios est�
 
 \section{Herramienta hardware para robo de sesiones}
 
-Para desarrollar la herramienta utilizamos un viejo router Huawei HG556a de Vodafone al que le instalamos el firmware libre OpenWRT \cite{openwrt}.
+Para desarrollar la herramienta utilizamos un viejo router ``Huawei HG556a'' de Vodafone al que le instalamos el firmware libre OpenWRT \cite{openwrt}.
 
 \bigskip
 Una vez instalado el firmware configuramos dos interfaces inalámbricas virtuales. La primera interfaz se configuró en modo cliente que conectamos a la red \textit{eduroam} haciendo uso de los certificados pertinentes y mi cuenta personal de usuario de la UGR. La segunda interfaz se configuró en modo punto de acceso, creando una red wifi sin contraseña de nombre \textit{eduroam\_pruebas} y agregamos las reglas necesarias a iptables para que redirigiera el trafico de una interfaz a otra por lo que los clientes que se conectaban a la red wifi \textit{eduroam\_pruebas} realmente estaban saliendo a internet por la red \textit{eduroam} pero con la salvedad de que podíamos espiar el tráfico que pasaba por la red. A este tipo de dispositivos de les denomina \textit{honeypot} (tarro de miel).
