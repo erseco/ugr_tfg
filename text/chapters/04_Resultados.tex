@@ -1,10 +1,10 @@
 \chapter{Resultados}
 
-En este capítulo pasamos a detallar los resultados de todos y cada uno de los análisis que realizamos en base a los que definimos en el capítulo anterior.
+En este capítulo pasamos a detallar los resultados de todos y cada uno de los análisis que realizamos en base a la metodología que definimos en el capítulo anterior.
 
 \section{Análisis general de la plataforma}
 
-La plataforma Prado usa la versión 2.6.4 de \textit{Moodle}, aunque la última versión estable a 15 de mayo de 2017 es la 3.3. La rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}.
+La plataforma Prado usa la versión 2.6.4 de \textit{moodle}, aunque la última versión estable a 15 de mayo de 2017 es la 3.3. La rama 2.6 dejó de recibir actualizaciones de soporte hace 2 años. Para conocer la versión de prado se puede consultar la url \url{http://prado.ugr.es/moodle/lib/upgrade.txt}.
 
 \bigskip
 Prado2 usa como plantilla el tema \textit{Archaius} \cite{moodletheme}, desarrollada por el programador colombiano Daniel Múnera Sánchez. Podemos ver la versión de la plantilla accediendo a \url{http://prado.ugr.es/moodle/theme/archaius/README.md} y viendo que la versión instalada es del 11 de agosto de 2014, cuando dicho tema tiene versiones más actualizadas que solucionan diversos problemas.
@@ -19,7 +19,7 @@ Al acceder a la url \url{http://prado.ugr.es/} nuestro navegador descargará un 
 Curiosamente Ágora \url{http://pefc5.ugr.es}, que es la instalación de \textit{Moodle} que utilizan en la facultad de psicología, resuelve esto con una redirección 302.
 
 \bigskip
-En cuanto al motor de base de datos, desde el CEVUG nos comentaron que utilizaban \textit{Oracle} por requerimiento del CSIRC, pues no daban soporte a ningún otro motor de base de datos y además habían tenido que realizar diversas adaptaciones al código de \textit{Moodle} para que funcionara sobre este motor. Tras la recepción de los datos por parte del CEVUG y analizando la consulta que lanzaron para obtener los datos, pudimos certificar que efectivamente estaban usando \textit{Oracle}, pues la consulta hacía uso de funciones propias de \textit{Oracle}, pero que \textit{Moodle} soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle, por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.
+En cuanto al motor de base de datos, desde el \textit{CEVUG} nos comentaron que utilizaban \textit{Oracle} por requerimiento del \textit{CSIRC}, pues no daban soporte a ningún otro motor de base de datos y además habían tenido que realizar diversas adaptaciones al código de \textit{Moodle} para que funcionara sobre este motor. Tras la recepción de los datos por parte del \textit{CEVUG} y analizando la consulta que lanzaron para obtener los datos, pudimos certificar que efectivamente estaban usando \textit{Oracle}, pues la consulta hacía uso de funciones propias de \textit{Oracle}, pero que \textit{Moodle} soporta de forma nativa 4 motores de base de datos: MySQL, PostgreSqL, MSSQL y Oracle, por lo que suponemos que las adaptaciones serían para automatizar la creación de cursos, alumnos y profesores.
 
 \begin{figure}
 \centering
@@ -63,7 +63,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item Aunque se escoja como idioma el inglés hay muchas cosas que aparecen en castellano, de hecho están mezclados ambos idiomas
 
-\item La ventana de solicitud de contraseña de \textit{Prado2} (el IDP del CSIRC) coge la configuración de idioma del navegador del usuario en lugar de la que viene de Prado. Esto hace que si por ejemplo tu navegador está en inglés pero tu estás mostrando Prado en español, al acceder al IDP la ventana se muestre en inglés.
+\item La ventana de solicitud de contraseña de \textit{Prado2} (el \textit{IDP} del CSIRC) coge la configuración de idioma del navegador del usuario en lugar de la que viene de Prado. Esto hace que si por ejemplo tu navegador está en inglés pero tu estás mostrando Prado en español, al acceder al \textit{IDP} la ventana se muestre en inglés.
 
 \item Hay que descargar los materiales de la asignatura uno a uno en lugar de dar una opción para descargar todo el conjunto en un archivo comprimido.
 
@@ -73,7 +73,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item No se notifican los cambios y/o novedades en la plataforma. Esto hace que a veces se cambie algo que funcionaba de una determinada manera y provoque confusión.
 
-\item Si el nombre del alumno contiene un carácter no ASCII, como pueden ser vocales acentuadas o una ``ñ'', a la hora de descargar los trabajos de dicho alumno la codificación del archivo será incorrecta y al desempaquetar el archivo .zip en sistemas windows aparece una carpeta vacía (en sistemas Linux no hay problema). En este caso el profesor recibió una queja del alumno por que no le habían calificado una serie de ejercicios. El profesor estuvo haciendo comprobaciones en varios sistemas y lo puso en conocimiento del CSIRC, donde le aseguraron que era problema de su equipo.
+\item Si el nombre del alumno contiene un carácter no ASCII, como pueden ser vocales acentuadas o una ``ñ'', a la hora de descargar los trabajos de dicho alumno la codificación del archivo será incorrecta y al desempaquetar el archivo .zip en sistemas windows aparece una carpeta vacía (en sistemas Linux no hay problema). En este caso el profesor recibió una queja del alumno por que no le habían calificado una serie de ejercicios. El profesor estuvo haciendo comprobaciones en varios sistemas y lo puso en conocimiento del \textit{CSIRC}, donde le aseguraron que era problema de su equipo.
 
 \item En determinados listados, no aparecen barras de desplazamiento horizontal por lo que aparece la información cortada. En otros listados, al contrario, dichas barras son tan largas que en numerosas ocasiones se ha perdido la localización espacial de la fila y se ha puntuado al alumno incorrecto.
 
@@ -87,16 +87,16 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item No se notifican la convocatorias de exámenes.
 
-\item El sistema de mensajería es complicado de encontrar y mucho más complicado de usar. En primer lugar, el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos. Además, en lugar de aparecer un botón que ponga  ``Enviar mensaje'', aparece un desplegable cuya única opción es ``Enviar mensaje'' (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al seleccionar esa opción pasamos a una ventana donde podemos redactar el mensaje, aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje, el profesor no recibe una copia pese a haberse marcado, con lo que no se puede comprobar que efectivamente se está enviado el mensaje a todos los alumnos. 
+\item El sistema de mensajería es complicado de encontrar y mucho más complicado de usar. En primer lugar, el profesor ha de marcar uno a uno los alumnos no habiendo una opción para seleccionarlos todos. Además, en lugar de aparecer un botón que ponga  ``Enviar mensaje'', aparece un desplegable cuya única opción es ``Enviar mensaje'' (ver imagen \ref{fig:pantallazoPradoenviarMensaje}), al seleccionar esa opción pasamos a una ventana donde podemos redactar el mensaje, aunque las opciones de insertar elementos no funcionan correctamente. En la parte inferior de ese mensaje vemos que aparece de nuevo toda la lista de alumnos sin respetar los que se habían marcado previamente. Al enviar el mensaje, el profesor no recibe una copia pese a haberse marcado, con lo que no se puede comprobar que efectivamente se está enviado el mensaje a todos los alumnos.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{../screenshots/pantallazoPradoenviarMensaje}
 \caption{Vista principal del clon de Prado}
 \label{fig:pantallazoPradoenviarMensaje}
-\end{figure} 
+\end{figure}
 
-\item El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado. Por último, y no menos importante, no permite editar el asunto del mensaje. 
+\item El editor de mensajes no deja copiar/pegar con el botón derecho del ratón aunque si que deja hacerlo mediante atajos de teclado. Por último, y no menos importante, no permite editar el asunto del mensaje.
 
 \item Si además sucede algún problema al enviar mensajes a los alumnos, nos podemos encontrar con un críptico mensaje de error como el de la figura \ref{fig:pantallazoPradoMensaje2} que dice  ``Algo ha ido mal al enviar mensajes a los usuarios seleccionados. Algunos pueden haber recibido el mensaje''.
 
@@ -113,7 +113,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item En la vista de grupos, los nombres salen cortados y además sólo aparecen los apellidos de los alumnos pero no sus nombres. Esto es un problema para alumnos con los mismos apellidos, además no se puede reordenar de ninguna forma.
 
-\item El menú superior donde aparecen las opciones ``Entrar'', ``Comunidad'', `Ayuda'' y ``Mis cursos'' no tiene un sentido claro: La opción ``Entrar` aparece siempre aunque la sesión esté iniciada, el menú ``Comunidad` está accesible más adelante y no tiene una importancia tal y como aparecer en la parte superior, el menú ``Ayuda'' nos lleva a una pagina externa del CEVUG para abrir un ticket y el menú ``Mis Cursos'' lleva a una vista que no es la misma que la de la página principal de \textit{Prado2}.
+\item El menú superior donde aparecen las opciones ``Entrar'', ``Comunidad'', `Ayuda'' y ``Mis cursos'' no tiene un sentido claro: La opción ``Entrar` aparece siempre aunque la sesión esté iniciada, el menú ``Comunidad` está accesible más adelante y no tiene una importancia tal y como aparecer en la parte superior, el menú ``Ayuda'' nos lleva a una pagina externa del \textit{CEVUG} para abrir un ticket y el menú ``Mis Cursos'' lleva a una vista que no es la misma que la de la página principal de \textit{Prado2}.
 
 \item La búsqueda de cursos suele tardar demasiado en responder.
 
@@ -131,7 +131,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item Si se ocultan las columnas de navegación laterales (flechas izquierda y derecha), al hacer click en otro enlace vuelven a aparecer. Esto obliga a estar ocultándolas todo el rato.
 
-\item Al enviar un mensaje a un estudiante a través de \textit{Moodle}, no se puede introducir el ``Asunto'', y ni tan siquiera podemos saber con que ``Asunto'' se enviará el e-mail. 
+\item Al enviar un mensaje a un estudiante a través de \textit{Moodle}, no se puede introducir el ``Asunto'', y ni tan siquiera podemos saber con que ``Asunto'' se enviará el e-mail.
 
 \item Aunque \textit{Moodle} preserve el anonimato en las respuestas de los cuestionarios, no preserva dicho anonimato en el ``registro de actividad''. Es decir, se puede saber quién ha respondido a la encuesta e incluso, si uno está pendiente de cada actualización del registro, saber quién es el autor de cada respuesta. Si una actividad se etiqueta como anónima, el acceso a la misma debería desaparecer del registro de actividad.
 
@@ -155,7 +155,7 @@ Además los distintos usuarios nos hicieron notar los siguientes problemas y/o c
 
 \item La plataforma en general carece de estilo y orden alguno, las cosas están por medio sin una estructura de calidad.
 
-\item No hay un sitio específico donde poner el horario de teoría y prácticas de la asignatura así como el horario de tutorías del profesorado implicado. En general, los datos de la asignatura (incluso objetivos, temario de teoría y temario de prácticas) y los del profesorado que la imparte, brillan por su ausencia. 
+\item No hay un sitio específico donde poner el horario de teoría y prácticas de la asignatura así como el horario de tutorías del profesorado implicado. En general, los datos de la asignatura (incluso objetivos, temario de teoría y temario de prácticas) y los del profesorado que la imparte, brillan por su ausencia.
 
 \end{enumerate}
 
@@ -210,10 +210,10 @@ En cambio, las opciones de Insignias, Blogs y Estadísticas no parecen ser vital
   \item \textbf{Actividades y recursos}
 
 \bigskip
-En cuanto a actividades, podemos ver que, al igual que en las instalaciones de moodle de otras universidades, las opciones mas usadas son las de agregar tareas y archivos, hay que tener en cuenta que hay actividades que básicamente son similares a agregar archivo, como puede ser carpeta, documento, página y libro.
+En cuanto a actividades, podemos ver que, al igual que en las instalaciones de \textit{moodle} de otras universidades, las opciones mas usadas son las de agregar tareas y archivos, hay que tener en cuenta que hay actividades que básicamente son similares a agregar archivo, como puede ser carpeta, documento, página y libro.
 
 \bigskip
-Aunque moodle tiene actividades que podrían ser muy útiles, como pueden ser los paquetes SCORM e IMS, el desconocimiento y/o la falta de formación hace que la gente ignore para que sirven.
+Aunque \textit{moodle} tiene actividades que podrían ser muy útiles, como pueden ser los paquetes SCORM e IMS, el desconocimiento y/o la falta de formación hace que la gente ignore para que sirven.
 
 \bigskip
 Igual pasa con algunas tareas específicas creadas para la UGR como pueden ser las clases grabadas (GA3), aunque si hay tareas que son necesarias aunque tengan muy poca utilización como pueden ser la selección de grupo de prácticas al inicio del curso y el control de asistencia.
@@ -243,13 +243,13 @@ A la hora de calificar prado han la mayoría de los usuarios han otorgado aproba
 
   \item \textbf{¿Con cuales de las siguientes plataformas de la UGR ha trabajado?}
 
-Aquí hay tres ganadores claves, y son evidentemente las plataformas que mas se han usado en todo el ámbito UGR como pueden ser el Tablón de Docencia, SWAD y el propio Prado2, luego encontramos plataformas usadas solo en la ETSIIT como pueden ser Tutor y DECSAI y algunos otros como el antiguo moodle del CEVUG y Ágora que es otra instalación de moodle utilizada en la facultad de Psicología.
+Aquí hay tres ganadores claves, y son evidentemente las plataformas que mas se han usado en todo el ámbito UGR como pueden ser el Tablón de Docencia, SWAD y el propio Prado2, luego encontramos plataformas usadas solo en la ETSIIT como pueden ser Tutor y DECSAI y algunos otros como el antiguo \textit{moodle} del \textit{CEVUG} y Ágora que es otra instalación de \textit{moodle} utilizada en la facultad de Psicología.
 
 \includegraphics[width=0.8\textwidth]{../charts/07_plataformastrabajado}
 
   \item \textbf{De las siguientes plataformas de la UGR ¿Cuál prefiere?}
 
-A la hora de establecer la plataforma favorita está clara la prevalencia de SWAD ya que es una plataforma potente y con muchos años de uso aunque Prado2 también tiene una buena acogida y mas teniendo en cuenta la sensación de descontento generalizado que percibíamos antes de comenzar este proyecto, esto quiere decir que tampoco se va por mal camino con la plataforma actual. 
+A la hora de establecer la plataforma favorita está clara la prevalencia de SWAD ya que es una plataforma potente y con muchos años de uso aunque Prado2 también tiene una buena acogida y mas teniendo en cuenta la sensación de descontento generalizado que percibíamos antes de comenzar este proyecto, esto quiere decir que tampoco se va por mal camino con la plataforma actual.
 
 \bigskip
 Resulta curioso que el Tablón de Docencia, una arcaica plataforma utilizada en la UGR sigue teniendo sus partidarios pero como ya hemos comentado anteriormente una de las cosas con las que más cuesta lidiar en cuanto a la usabilidad es la resistencia de los usuarios al cambio, aunque este sea a mejor.
@@ -273,11 +273,11 @@ Esta pregunta al ser de entrada libre se adjuntará en el anexo VI
 
 \section{Análisis de registros propios de la plataforma}
 
-Tras analizar los registros proporcionados por el CEVUG de los años 2015 y 2016 vemos que los resultados de la encuesta cuadran con los mismos. Hay que tener en cuenta que solo se tienen registros hasta el 31 de Diciembre de 2016, por lo que los datos del curso 2016/2017 seguramente se duplicarán.
+Tras analizar los registros proporcionados por el \textit{CEVUG} de los años 2015 y 2016 vemos que los resultados de la encuesta cuadran con los mismos. Hay que tener en cuenta que solo se tienen registros hasta el 31 de Diciembre de 2016, por lo que los datos del curso 2016/2017 seguramente se duplicarán.
 
 \ref{fig:distintonumerousuarios}.
 
-Lo primero a destacar son el incremento de peticiones del año 2015 al año 2016 que se puede apreciar en la tabla de la figura \ref{table:sumarioregistros}, seguramente debido a la campaña de aviso de cambio de plataforma por parte del CEVUG en 2015.
+Lo primero a destacar son el incremento de peticiones del año 2015 al año 2016 que se puede apreciar en la tabla de la figura \ref{table:sumarioregistros}, seguramente debido a la campaña de aviso de cambio de plataforma por parte del \textit{CEVUG} en 2015.
 
 \begin{table}[H]
 \centering
@@ -342,7 +342,7 @@ En la figura \ref{fig:frecuenciaactividaddiaria} se percibe como la mayoría de 
 \label{fig:frecuenciaactividaddiaria}
 \end{figure}
 
-En cuanto a las actividades podemos ver en las figuras \ref{fig:usoactividades_2015} y \ref{fig:usoactividades_2016} así como en la tabla \ref{table:usoactividades_2015} que tal y como concluimos en la encuesta la gran mayoría de las actividades disponibles en moodle no tienen apenas uso. 
+En cuanto a las actividades podemos ver en las figuras \ref{fig:usoactividades_2015} y \ref{fig:usoactividades_2016} así como en la tabla \ref{table:usoactividades_2015} que tal y como concluimos en la encuesta la gran mayoría de las actividades disponibles en \textit{moodle} no tienen apenas uso.
 
 \bigskip
 Hay que destacar que la actividad ``course'' se refiere a cada vez que un usuario visualiza o hace click en el contenido de un curso acaparando por ello la mayor parte de las interacciones, la actividad ``user'' se crea cada vez que se ve el perfil de un usuario o profesor y la actividad ``assign'' es para uso interno de moodle. Exceptuando estos tres casos vemos como las mas usados los cuestionarios y los archivos.
@@ -397,7 +397,7 @@ notes         & 3.023     & 1.348     \\
 pumukit       & 1.713     & 3.280     \\
 imscp         & 1.161     & 1.995     \\
 lti           & 558       & 883       \\
-discussion    & 203       & 255      
+discussion    & 203       & 255
 \end{tabular}
 \caption{Tabla detallada del uso de actividades}
 \label{table:usoactividades_2015}
@@ -416,10 +416,10 @@ En nuestro análisis hemos encontrado los siguientes problemas:
 \item Aparece la información para iniciar sesión en la cabecera y en el pié de la página, esto es redundante, debería aparecer solo en la cabecera.
 \item El selector de idioma ocupa una gran parte de la pantalla siendo un elemento de uso poco común. De hecho como veremos más adelante la traducción al inglés brilla por su ausencia, lo ideal en estos casos es colocar los enlaces para cambiar el idioma en el pié de página. Hay que tener en cuenta que la plataforma detecta el idioma del navegador para seleccionar Español o Inglés. Además debería poner ``Castellano'' en lugar de ``Español - Internacional''.
 \item El título ``PLATAFORMA DE RECURSOS DE APOYO A LA DOCENCIA'' no debería aparecer como una imagen, ya que además de no estar traducida hace que no todos los dispositivos la muestren bien al ser una imagen demasiado ancha.
-\item La ventana de login muestra una imagen con la ruta https hacia el proveedor de identidad del CSIRC, un poco mas abajo nos encontramos un botón con la misma ruta pero con http. El IDP automáticamente redirige a https, este botón debería ocultarse. El acceso para administradores también debería ocultarse.
+\item La ventana de login muestra una imagen con la ruta https hacia el proveedor de identidad del \textit{CSIRC}, un poco mas abajo nos encontramos un botón con la misma ruta pero con http. El \textit{IDP} automáticamente redirige a https, este botón debería ocultarse. El acceso para administradores también debería ocultarse.
 \item Debajo del banner de título aparece un menú con fondo azul en el que siempre aparece la opción ``Entrar'' aunque ya hayamos iniciado la sesión en la plataforma.
 \item La opción ``Comunidad'' no tiene un uso tan importante como para aparecer ahí, quizá debería estar como un enlace en el pie. Además, podemos acceder al mismo desde el panel lateral.
-\item La opción ``Ayuda'' lleva a una página externa del CEVUG para solicitar asistencia, al tener un diseño distinto debería abrirse en una ventana nueva.
+\item La opción ``Ayuda'' lleva a una página externa del \textit{CEVUG} para solicitar asistencia, al tener un diseño distinto debería abrirse en una ventana nueva.
 \item Con la sesión iniciada se muestran los cursos del alumno, pero al haber cursos con el mismo nombre hay que ir probando uno a uno con lo cual esta opción tampoco tiene utilidad.
 \item Si se está dentro de un curso también vemos la opción ``Calificaciones'', esta opción se puede ver desde el panel lateral y teniendo en cuenta que la mayoría de los profesores no ponen las calificaciones en prado quizá esta opción debería ocultarse.
 \item En resumidas cuentas, este menú superior se podría ocultar sin ningún tipo de problema, ganando muchísimo espacio en la pantalla.
@@ -436,7 +436,7 @@ En nuestro análisis hemos encontrado los siguientes problemas:
 \item Al entregar una tarea muchas veces se olvida de enviar para calificación, lo ideal sería que por defecto al crear una tarea sea el envío automático para calificación.
 \item No se puede ver si han habido cambios en los archivos subidos por el profesor, ni la fecha de subida ni ninguna información. De hecho, el nombre del archivo no tiene por qué coincidir con el texto que aparece en Prado, aumentando la confusión.
 \item No se pueden descargar todos los archivos de una asignatura de golpe, hay que ir uno a uno.
-\item Cuando un profesor está en modo edición puede agregar archivos de forma sencilla arrastrándolos sobre la ventana de cursos, pero la web no lo explica. En la plantilla por defecto de moodle si que sale una notificación informando de esta funcionalidad. Esto se debería mostrar ya que facilita mucho la tarea de subir archivos a la plataforma.
+\item Cuando un profesor está en modo edición puede agregar archivos de forma sencilla arrastrándolos sobre la ventana de cursos, pero la web no lo explica. En la plantilla por defecto de \textit{moodle} si que sale una notificación informando de esta funcionalidad. Esto se debería mostrar ya que facilita mucho la tarea de subir archivos a la plataforma.
 \item Cuando un profesor va a agregar una actividad el menú que sale es enorme, quizá se debería mostrar los mas utilizados, dejar el resto ocultos y permitir mostrarlo en una vista avanzada.
 \item La vista de ``Todos los cursos'' se debería ocultar, pues es imposible utilizar un desplegable con mas de 1000 opciones.
 \item La vista ``Novedades del sitio'' no muestra nada y al seleccionarla cambia de posición en el panel lateral, lo ideal sería ocultarla.
@@ -492,10 +492,10 @@ La plantilla tiene un menú ``hamburguesa'' debajo de la imagen de perfil pero e
 \end{figure}
 
 \bigskip
-La plataforma moodle está disponible en más de 100 idiomas pero en Prado se ha optado por habilitar castellano e inglés. El problema es que gran parte del contenido añadido a la plantilla, la ayuda y la información de los cursos se ha introducido de forma forzada en castellano con lo que el uso en inglés de la plataforma es prácticamente imposible. Varios alumnos de intercambio nos han hecho llegar sus quejas a la hora de manejarse en la plataforma, ya que no entienden que seleccionando la opción de idioma inglés la mayor parte de la interfaz y el contenido aparezca en castellano, creándoles confusión ya que muchos desconocen el castellano.
+La plataforma \textit{moodle} está disponible en más de 100 idiomas pero en Prado se ha optado por habilitar castellano e inglés. El problema es que gran parte del contenido añadido a la plantilla, la ayuda y la información de los cursos se ha introducido de forma forzada en castellano con lo que el uso en inglés de la plataforma es prácticamente imposible. Varios alumnos de intercambio nos han hecho llegar sus quejas a la hora de manejarse en la plataforma, ya que no entienden que seleccionando la opción de idioma inglés la mayor parte de la interfaz y el contenido aparezca en castellano, creándoles confusión ya que muchos desconocen el castellano.
 
 \bigskip
-Si un usuario selecciona el idioma inglés, al ir a la página del IDP del CSIRC para iniciar sesión no se respetará la selección del usuario sino que se obtendrá el idioma del navegador. Esto tendría una solución bastante sencilla pues bastaría pasarle a la url el parámetro \texttt{\&language=<codigo\_iso>} en la llamada al proveedor de identidad.
+Si un usuario selecciona el idioma inglés, al ir a la página del \textit{IDP} del \textit{CSIRC} para iniciar sesión no se respetará la selección del usuario sino que se obtendrá el idioma del navegador. Esto tendría una solución bastante sencilla pues bastaría pasarle a la url el parámetro \texttt{\&language=<codigo\_iso>} en la llamada al proveedor de identidad.
 
 
 \section{Análisis de seguridad}
@@ -509,7 +509,7 @@ Al ver el código fuente de la página vemos que se están enlazando de manera a
 Una vez lanzado el programa ettercap le pedimos al tutor que se conectara a Prado y a los pocos segundos obtuvimos el resultado que se puede ver en la figura \ref{fig:ettercap}, en unos pocos segundos y aun estando dentro de una red wifi con cifrado WPA2 pudimos realizar el ataque de ARP Spoofing sin ningún problema. Finalmente obtuvimos las variables de sesión \textbf{MOODLEID1\_}, \textbf{SimpleSAMLSessionID-sp} y \textbf{SimpleSAMLAuthToken}, las cuales copiamos en nuestro navegador con un editor de cookies y de inmediato podíamos navegar suplantando la identidad del tutor.
 
 \bigskip
-Hay que tener en cuenta que para iniciar sesión se utiliza el IDP del CSIRC, que si funciona a través de https por lo que en ningún momento podríamos capturar la contraseña del usuario como si se podría hacer si la página de login funcionara a través de http.
+Hay que tener en cuenta que para iniciar sesión se utiliza el \textit{IDP} del \textit{CSIRC}, que si funciona a través de https por lo que en ningún momento podríamos capturar la contraseña del usuario como si se podría hacer si la página de login funcionara a través de http.
 
 \bigskip
 También es un pequeño problema de seguridad el permitir acceder a ficheros README, CHANGELOG y demás, pues esto permite a un posible atacante conocer la versión que se está ejecutando y realizar un ataque utilizando vulnerabilidades conocidas. Si la plataforma se mantuviera constantemente actualizada esto no sería un problema, pero si se va congelar en una versión antigua y sin soporte lo mejor es ``fortificar'' la instalación para evitar males mayores.
@@ -581,7 +581,7 @@ Como podemos ver en la imagen \ref{fig:statuscake2} el tiempo de respuesta del s
 
 \section{Clonado de la plataforma}
 
-Se creó el subdominio \url{http://prado.ernesto.es} en mi servidor personal y se instaló la versión 2.6.4 de moodle, luego se procedió a instalar el tema Archaius  (ver imagen \ref{fig:archaius} y a copiarle los estilos CSS en el fichero /theme/archaius/style/custom.css, copiar la imagen de cabecera (ver imagen \ref{fig:cabeceraprado} y en un tiempo mínimo teníamos funcionando un sistema casi idéntico al prado original (ver imagen \ref{fig:pradoernesto} donde agregamos unas cuantas asignaturas así como alumnos y profesores para probar las distintas opciones de moodle.
+Se creó el subdominio \url{http://prado.ernesto.es} en mi servidor personal y se instaló la versión 2.6.4 de \textit{moodle}, luego se procedió a instalar el tema Archaius  (ver imagen \ref{fig:archaius} y a copiarle los estilos CSS en el fichero /theme/archaius/style/custom.css, copiar la imagen de cabecera (ver imagen \ref{fig:cabeceraprado} y en un tiempo mínimo teníamos funcionando un sistema casi idéntico al prado original (ver imagen \ref{fig:pradoernesto} donde agregamos unas cuantas asignaturas así como alumnos y profesores para probar las distintas opciones de \textit{moodle}.
 
 \begin{figure}[H]
 \centering
