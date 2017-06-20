@@ -15,7 +15,7 @@
 *~
 
 # Archivo PDF
-*.pdf
+#*.pdf
 
 # R
 .Rhistory
