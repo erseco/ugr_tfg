@@ -1,16 +1,0 @@
---2017-05-03 19:07:37--  https://docs.google.com/spreadsheets/d/1_PtOspuoQBiH88XS8LP_UetWCnzsBH69m84pvzbAK1A/pubchart?oid=117395251
-Resolving docs.google.com... 216.58.201.142, 2a00:1450:4003:804::200e
-Connecting to docs.google.com|216.58.201.142|:443... connected.
-HTTP request sent, awaiting response... 302 Moved Temporarily
-Location: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&continue=https://docs.google.com/spreadsheets/d/1_PtOspuoQBiH88XS8LP_UetWCnzsBH69m84pvzbAK1A/pubchart?oid%3D117395251&followup=https://docs.google.com/spreadsheets/d/1_PtOspuoQBiH88XS8LP_UetWCnzsBH69m84pvzbAK1A/pubchart?oid%3D117395251&ltmpl=sheets [following]
---2017-05-03 19:07:38--  https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&continue=https://docs.google.com/spreadsheets/d/1_PtOspuoQBiH88XS8LP_UetWCnzsBH69m84pvzbAK1A/pubchart?oid%3D117395251&followup=https://docs.google.com/spreadsheets/d/1_PtOspuoQBiH88XS8LP_UetWCnzsBH69m84pvzbAK1A/pubchart?oid%3D117395251&ltmpl=sheets
-Resolving accounts.google.com... 216.58.201.141, 2a00:1450:4003:804::200d
-Connecting to accounts.google.com|216.58.201.141|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘pubchart?oid=117395251’
-
-pubchart?oid=117395     [<=>                 ]       0  --.-KB/s               pubchart?oid=117395     [ <=>                ]  55.44K  --.-KB/s    in 0.1s    
-
-2017-05-03 19:07:38 (486 KB/s) - ‘pubchart?oid=117395251’ saved [56768]
-
