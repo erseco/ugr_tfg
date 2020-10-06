@@ -1,6 +1,6 @@
 # Trabajo de Fin de Grado
 
-Análisis de plataforma de recursos de apoyo a la docencia Prado2
+Análisis de plataforma de recursos de apoyo a la docencia Prado2.
 
 Elaboración de un informe profesional sobre la Plataforma de Recursos de Apoyo a la Docencia en uso actualmente por la Universidad de Granada analizando su Accesibilidad, Usabilidad, Seguridad y Disponibilidad.
 
